@@ -5,9 +5,11 @@ function Document() {
   return (
     <Html key="head">
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Russo+One&display=optional"
-          rel="stylesheet"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=optional"
@@ -18,7 +20,7 @@ function Document() {
           rel="stylesheet"
         ></link>
         <link
-          href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;300&family=Oswald:wght@700&family=Tinos&display=swap"
           rel="stylesheet"
         ></link>
       </Head>{' '}
