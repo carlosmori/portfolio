@@ -6,8 +6,12 @@
   html {
     height: 100%;
     background-color: white;
+    overflow: hidden;
   }
   body {
     height: 100%;
+  }
+  * {
+    outline: 1px solid #f00 !important;
   }
 }

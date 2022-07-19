@@ -63,11 +63,16 @@ function About() {
       viewportWidth / 2 - width
     )
   }
-
+  useEffect(() => {
+    console.log(`scrollY equals:`)
+    console.log(scrollY)
+    console.log(`aboutContainerRef.current?.offsetTop equals:`)
+    console.log(aboutContainerRef.current?.offsetTop)
+  }, [scrollY])
   return (
     <div
       ref={aboutContainerRef}
-      className="relative flex min-h-screen flex-col items-center justify-center text-center"
+      className={`relative flex min-h-screen w-screen flex-col items-center justify-center text-center`}
     >
       <h2
         ref={aboutH1Ref}
