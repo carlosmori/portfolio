@@ -45,10 +45,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main
-        className="relative h-[100vh]"
+        className="no-scrollbar relative h-[100vh]"
         style={{
           overflowY: 'scroll',
           scrollSnapType: 'y mandatory',
+          scrollbarWidth: 'none',
+          // ::-webkit-scrollbar {display:none;}
+
+          // // -ms-overflow-style: 'none',
+          // '::-webkit-scrollbar': {
+          //   display: none,
+          // },
         }}
       >
         <div
@@ -68,13 +75,13 @@ const Home: NextPage = () => {
           }}
         > */}
         <div
-          className="outer-wrapper absolute h-[100vw] w-[100vh] bg-black"
+          className="outer-wrapper no-scrollbar absolute h-[100vw] w-[100vh] bg-black"
           style={{
             transform: 'rotate(-90deg) translateX(-100vh)',
             transformOrigin: 'top left',
             overflowY: 'scroll',
             overflowX: 'hidden',
-            scrollSnapType: 'y mandatory',
+            // scrollSnapType: 'y mandatory',
             scrollSnapAlign: 'start',
           }}
         >
@@ -87,19 +94,19 @@ const Home: NextPage = () => {
           >
             <div
               className="content-1 h-screen w-screen bg-blue-600"
-              style={{ scrollSnapAlign: 'start' }}
+              // style={{ scrollSnapAlign: 'start' }}
             ></div>
             <div
               className="content-2 h-screen w-screen bg-green-600"
-              style={{ scrollSnapAlign: 'start' }}
+              // style={{ scrollSnapAlign: 'start' }}
             ></div>
             <div
               className="content-3 h-screen w-screen bg-yellow-600"
-              style={{ scrollSnapAlign: 'start' }}
+              // style={{ scrollSnapAlign: 'start' }}
             ></div>
             <div
               className="content-4 h-screen w-screen bg-red-600"
-              style={{ scrollSnapAlign: 'start' }}
+              // style={{ scrollSnapAlign: 'start' }}
             ></div>
           </div>
         </div>
