@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Welcome from './Welcome'
 
 function Main() {
@@ -7,15 +7,17 @@ function Main() {
   const [activateVerticalScroll, setActivateVerticalScroll] = useState(false)
 
   const prevScrollY = useRef(0)
-  const mainRef = useRef(null)
-  const horizontalContainerRef = useRef(null)
-  const horizontalContainerChildRef = useRef(null)
+  const mainContainerRef = useRef(null)
+  const firstHorizontalContainerRef: any = useRef(null)
+  const firstHorizontalContainerChildRef: any = useRef(null)
 
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
     prevScrollY.current = currentScrollY
+    if (firstHorizontalContainerRef.current) {
+    }
     setActivateHorizontalScroll(
-      currentScrollY == horizontalContainerRef.current.offsetHeight
+      currentScrollY == firstHorizontalContainerRef.current.offsetHeight
     )
   }
   const onScrollHorizontal = (e: any) => {
@@ -25,20 +27,23 @@ function Main() {
     prevScrollY.current = currentScrollY
     setActivateVerticalScroll(
       currentScrollY ===
-        horizontalContainerRef.current.offsetWidth *
+        firstHorizontalContainerRef.current.offsetWidth *
           (amountOfElementsInContainer - 1)
     )
   }
   return (
     <main
       className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden"
-      ref={mainRef}
+      ref={mainContainerRef}
       onScroll={onScrollMain}
     >
       <div className="h-screen">
         <Welcome />
       </div>
-      <div className="relative h-screen w-screen" ref={horizontalContainerRef}>
+      <div
+        className="relative h-screen w-screen"
+        ref={firstHorizontalContainerRef}
+      >
         <div
           className={`outer-wrapper no-scrollbar absolute h-[100vw] w-[100vh] bg-black ${
             activateHorizontalScroll ? 'overflow-y-scroll' : 'overflow-y-hidden'
@@ -56,7 +61,7 @@ function Main() {
               transform: 'rotate(90deg) translateY(-100vh)',
               transformOrigin: 'top left',
             }}
-            ref={horizontalContainerChildRef}
+            ref={firstHorizontalContainerChildRef}
           >
             <div className="content-1 h-screen w-screen bg-blue-600"></div>
             <div className="content-2 h-screen w-screen bg-green-600"></div>

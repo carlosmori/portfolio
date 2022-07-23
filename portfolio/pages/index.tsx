@@ -1,35 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import About from '../components/About'
 import Main from '../components/Main'
-import Parallax from '../components/Parallax'
-import Welcome from '../components/Welcome'
 
 const Home: NextPage = () => {
-  const ref = useRef(null)
-  const [scrollY, setScrollY] = useState(0)
-
-  const handleOnScroll = (e) => {
-    console.log(`e.scrollY equals:`)
-    console.log(e.scrollY)
-  }
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(ref.current?.scrollY)
-  //   }
-  //   // handleScroll()
-  //   ref.current?.removeEventListener('scroll', handleScroll)
-  //   ref.current?.addEventListener('scroll', handleScroll, { passive: true })
-  //   return () => {
-  //     ref.current?.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, [])
-
-  useEffect(() => {
-    console.log(`scrollY equals:`)
-    console.log(scrollY)
-  }, [scrollY])
   return (
     <div>
       <Head key="head">
