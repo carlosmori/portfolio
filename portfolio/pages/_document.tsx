@@ -23,6 +23,11 @@ function Document() {
           href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;300&family=Oswald:wght@700&family=Tinos&display=swap"
           rel="stylesheet"
         ></link>
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>{' '}
       <body>
         <Main />

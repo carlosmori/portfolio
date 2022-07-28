@@ -15,6 +15,7 @@ module.exports = {
         oswald: ['Oswald'],
         tinos: ['Tinos'],
         ultraFancy: ['Splash'],
+        kanit: ['Kanit'],
       },
       animation: {
         'spin-slow': 'spin 3s linear infinite',
@@ -25,6 +26,12 @@ module.exports = {
         'fast-fade-out': 'fade-out 1s ease-in-out 1',
         'fade-in-scaled-up-wiggle':
           'fade-in-scaled-up 1s ease-in-out 1, smooth-wiggle 2s linear 1s 1',
+        rotate: 'rotate 3s linear infinite;',
+        scale: 'scale 3s ease-in-out 1;',
+        typing: 'typing 2s steps(40, end)',
+        'horizontal-bar':
+          'horizontal-bar 2s cubic-bezier(.74, .06, .4, .92) forwards;',
+        'pop-in': 'pop-in 0.8s cubic-bezier(.74, .06, .4, .92) forwards',
       },
 
       colors: {
@@ -46,6 +53,10 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        'secondary-fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '0.5' },
+        },
         'fade-out': {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' },
@@ -53,6 +64,57 @@ module.exports = {
         'fade-in-scaled-up': {
           '0%': { opacity: '0', transform: 'scale(1.5) rotate(-1deg)' },
           '100%': { opacity: '1', transform: 'scale(1) rotate(-1deg)' },
+        },
+        rotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        scale: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(2)' },
+        },
+        typing: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+        'horizontal-bar': {
+          '0%': { width: '0', left: '0' },
+          '50%': { width: '100%', left: '0' },
+          '100%': { width: '0', left: '100%' },
+        },
+        'pop-in': {
+          '0% ': {
+            width: ' 0px',
+            height: ' 0px',
+            background: ' #ffcb00',
+            border: ' 0px solid #ddd',
+            opacity: ' 0',
+          },
+          '50%': {
+            width: ' 10px',
+            height: ' 10px',
+            background: ' #ffcb00',
+            opacity: ' 1',
+            bottom: ' 45px',
+          },
+          '65%': {
+            width: ' 7px',
+            height: ' 7px',
+            bottom: ' 0px',
+            width: '15px',
+          },
+          '80%': {
+            width: ' 10px',
+            height: ' 10px',
+            bottom: '20px',
+          },
+          '100%': {
+            width: ' 7px',
+            height: ' 7px',
+            background: ' #ffcb00',
+            border: ' 0px solid #222',
+            bottom: ' 13px',
+          },
         },
       },
     },

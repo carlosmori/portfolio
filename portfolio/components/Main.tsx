@@ -1,4 +1,9 @@
 import React, { useRef, useState } from 'react'
+import Step1 from './Step1'
+import Step2 from './Step2'
+import Step3 from './Step3'
+import Step4 from './Step4'
+import Step5 from './Step5'
 import Welcome from './Welcome'
 
 function Main() {
@@ -6,41 +11,52 @@ function Main() {
     useState(false)
   const [activateVerticalScroll, setActivateVerticalScroll] = useState(false)
 
-  const prevScrollY = useRef(0)
+  const [prevScrollY, setPrevScrollY] = useState(0)
   const mainContainerRef = useRef(null)
   const firstHorizontalContainerRef: any = useRef(null)
   const firstHorizontalContainerChildRef: any = useRef(null)
 
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
-    prevScrollY.current = currentScrollY
-    if (firstHorizontalContainerRef.current) {
-    }
+    setPrevScrollY(currentScrollY)
+    // console.log(`prevScrollY.current equals:`)
+    // console.log(prevScrollY.current)
+    // console.log(`currentScrollY,  equals:`)
+    // console.log(
+    //   currentScrollY,
+    //   firstHorizontalContainerRef?.current?.offsetHeight
+    // )
+    // !3 corresponds to the amount of vertical elements
     setActivateHorizontalScroll(
-      currentScrollY == firstHorizontalContainerRef.current.offsetHeight
+      currentScrollY == firstHorizontalContainerRef?.current?.offsetHeight * 3
     )
   }
   const onScrollHorizontal = (e: any) => {
-    // update this variable when increasing childs
+    // !update this variable when increasing childs
     const amountOfElementsInContainer = 3
     const currentScrollY = e.target.scrollTop
-    prevScrollY.current = currentScrollY
+    setPrevScrollY(currentScrollY)
     setActivateVerticalScroll(
       currentScrollY ===
-        firstHorizontalContainerRef.current.offsetWidth *
+        firstHorizontalContainerRef?.current?.offsetWidth *
           (amountOfElementsInContainer - 1)
     )
   }
   return (
     <main
-      className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden"
+      className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden font-kanit"
       ref={mainContainerRef}
       onScroll={onScrollMain}
     >
       <div className="h-screen">
         <Welcome />
       </div>
-      <div
+      <Step1 />
+      <Step2 />
+      <Step3 />
+      <Step4 />
+      <Step5 currentScrollY={prevScrollY} />
+      {/* <div
         className="relative h-screen w-screen"
         ref={firstHorizontalContainerRef}
       >
@@ -63,11 +79,11 @@ function Main() {
             }}
             ref={firstHorizontalContainerChildRef}
           >
-            <div className="content-1 h-screen w-screen bg-blue-600"></div>
-            <div className="content-2 h-screen w-screen bg-green-600"></div>
-            <div className="content-3 h-screen w-screen bg-yellow-600"></div>
+            <Step3 />
+            <Step3 />
+            <Step3 />
             <div
-              className={`absolute h-screen w-screen bg-fuchsia-800`}
+              className={`absolute h-screen w-screen`}
               style={{ right: '0' }}
             >
               <div
@@ -77,13 +93,13 @@ function Main() {
                     : 'overflow-y-hidden'
                 }`}
               >
-                <div className="content-1 h-screen w-screen bg-red-600"></div>
-                <div className="content-2 bg-white-600 h-screen w-screen"></div>
+                <Step4 />
+                <Step5 />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }

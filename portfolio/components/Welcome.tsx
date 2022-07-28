@@ -1,15 +1,84 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Welcome() {
+  const [displayHi, setDisplayHi] = useState(true)
+  const [displayIntroduction, setDisplayIntroduction] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplayHi(true)
+    }, 2000)
+  }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplayIntroduction(true)
+    }, 4000)
+  }, [])
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center text-center">
-      <h1 className="inline-block w-fit -rotate-1 transform animate-fade-in-scaled-up-wiggle font-fancy text-6xl md:text-9xl">
-        Charly Mori
-      </h1>
-      <p className="pl-0 pt-2 text-lg md:pl-20  md:text-2xl">
-        <text className="animate-pulse">Frontend Developer </text>
-        <text className="inline-block  animate-smooth-wiggle">Developer</text>
-      </p>
+    <div
+      className="flex min-h-screen flex-col items-center justify-center bg-cover text-center"
+      style={
+        {
+          // backgroundImage:
+          //   'url(/Pictures/Background/astroman-stars-high-quality-space-background-1038774.png)',
+        }
+      }
+    >
+      <div
+        className="box relative flex flex-col justify-center"
+        style={
+          {
+            // width: '250px',
+            // height: '250px',
+          }
+        }
+      >
+        <div
+          className="title relative flex h-16 w-full items-center md:h-36"
+          style={{}}
+        >
+          <span
+            className="absolute flex w-0 animate-horizontal-bar"
+            style={{
+              background: '#ffcb00',
+              height: 'inherit',
+            }}
+          ></span>
+          <h1
+            className="relative flex animate-fade-in items-baseline font-fancy text-6xl opacity-0 md:text-9xl"
+            style={{
+              animationDelay: '1.6s',
+              animationFillMode: 'forwards',
+            }}
+          >
+            Charlie Mori
+            <span
+              className="absolute h-0 w-0 animate-pop-in rounded-full "
+              style={{
+                background: '#ffcb00',
+                animationDelay: '2s',
+                marginLeft: '5px',
+                marginTop: '-10px',
+                bottom: '13px',
+                right: '-12px',
+              }}
+            ></span>
+          </h1>
+        </div>
+        <div className="role">
+          <div className="block"></div>
+          <p
+            className="animate-fade-in text-xl md:text-2xl"
+            style={{
+              opacity: 0,
+              animationDelay: '2s',
+              animationFillMode: 'forwards',
+            }}
+          >
+            Frontend Dev | Digital Nomad
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
