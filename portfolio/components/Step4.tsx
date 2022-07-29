@@ -60,7 +60,7 @@ function Step4() {
             height={300}
           />
         </div>
-        <div className="absolute top-[80%] right-[50%]">
+        {/* <div className="absolute top-[80%] right-[50%]">
           <Image
             src={MeteoritoPic3}
             alt="Picture of the Meteorito 3"
@@ -68,7 +68,7 @@ function Step4() {
             width={250}
             height={250}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   )

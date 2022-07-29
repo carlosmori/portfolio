@@ -38,13 +38,12 @@ function Step3() {
             height={300}
           />
         </div>
-        <div className="absolute top-[45%] right-[20%]">
+        <div className="absolute top-[37%] h-32 w-32 md:top-[45%] md:right-[20%] md:h-52	md:w-52">
           <Image
             src={MeteoritoPic1}
             alt="Picture of the Meteorito 1"
             className=""
-            width={200}
-            height={200}
+            layout="responsive"
           />
         </div>
         <div className="absolute top-[65%] right-[70%]">

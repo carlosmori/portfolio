@@ -4,6 +4,8 @@ import Step2 from './Step2'
 import Step3 from './Step3'
 import Step4 from './Step4'
 import Step5 from './Step5'
+import Step6 from './Step6'
+import Step7 from './Step7'
 import Welcome from './Welcome'
 
 function Main() {
@@ -44,7 +46,7 @@ function Main() {
   }
   return (
     <main
-      className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden font-kanit"
+      className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden bg-black font-kanit"
       ref={mainContainerRef}
       onScroll={onScrollMain}
     >
@@ -56,6 +58,8 @@ function Main() {
       <Step3 />
       <Step4 />
       <Step5 currentScrollY={prevScrollY} />
+      <Step6 currentScrollY={prevScrollY} />
+      <Step7 currentScrollY={prevScrollY} />
       {/* <div
         className="relative h-screen w-screen"
         ref={firstHorizontalContainerRef}
