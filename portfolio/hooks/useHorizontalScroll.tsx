@@ -6,10 +6,6 @@ export function useHorizontalScroll() {
     const el = elRef.current
     if (el) {
       const onWheel = (e) => {
-        console.log(`e.deltaY equals:`)
-        console.log(e.deltaY)
-        console.log(`el.scrollLeft equals:`)
-        console.log(el.scrollLeft)
         if (e.deltaY == 0) return
         e.preventDefault()
         el.scrollTo({

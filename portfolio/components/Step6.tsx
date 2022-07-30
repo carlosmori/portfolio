@@ -31,7 +31,7 @@ function Step6({ currentScrollY }) {
             animationDuration: '1.5s',
           }}
         >
-          And Spin
+          Sometimes they Spin
         </h1>
         <div
           className={`absolute left-[5%] h-32 w-32 animate-rotate md:h-96 md:w-96`}

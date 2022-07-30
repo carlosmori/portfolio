@@ -25,7 +25,7 @@ function Step3() {
             animationDuration: '1.5s',
           }}
         >
-          Static Scrolling is boring
+          Sometimes things in Space...
         </h1>
       </div>
       <div className="relative w-full ">

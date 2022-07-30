@@ -29,7 +29,7 @@ function Step4() {
             animationDuration: '1.5s',
           }}
         >
-          I think things should move
+          Remain Still
         </h1>
       </div>
       <div className="relative w-full bg-black">

@@ -14,15 +14,7 @@ function Step5({ currentScrollY }) {
     threshold: 0.1,
   })
   const [offSetTop, setOffSetTop] = useState(0)
-  const ref = useRef()
   useEffect(() => {
-    console.log(`currentScrollY`)
-    console.log(currentScrollY)
-    console.log(`containerRef.current.offsetTop equals:`)
-    console.log(containerRef.current.offsetTop)
-    console.log(`top value: `)
-    console.log((currentScrollY * 100) / containerRef.current.offsetTop - 100)
-
     setOffSetTop((currentScrollY * 100) / containerRef.current.offsetTop - 100)
   }, [currentScrollY, containerRef])
   return (
@@ -38,7 +30,7 @@ function Step5({ currentScrollY }) {
             animationDuration: '1.5s',
           }}
         >
-          Do you?
+          Other times they float
         </h1>
       </div>
       <div className="relative w-full bg-black	">
