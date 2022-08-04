@@ -129,7 +129,7 @@ function Main() {
             />
             <div className="h-screen w-screen bg-blue-500"></div>
             <div
-              className={`absolute h-screen w-screen`}
+              className={`absolute z-10 h-screen w-screen`}
               style={{ right: '0' }}
             >
               <div
@@ -140,15 +140,6 @@ function Main() {
                 }`}
               >
                 <Step10
-                  prevScrollY={prevScrollY}
-                  prevScrollX={prevScrollX}
-                  parentOffSetTop={
-                    firstHorizontalContainerRef?.current?.offsetHeight *
-                    amountOfVerticalElements
-                  }
-                  amountOfVerticalElements={amountOfVerticalElements}
-                />
-                <Step11
                   prevScrollY={prevScrollY}
                   prevScrollX={prevScrollX}
                   parentOffSetTop={

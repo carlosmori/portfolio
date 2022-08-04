@@ -1,4 +1,4 @@
-export function MouseTrailMagic(canvas, ctx, noise) {
+export function MouseTrailMagic(canvas, ctx, noise, isMounted, windowObj) {
   let nParticles = 250
   let p = 0
   let forces = []
@@ -8,10 +8,9 @@ export function MouseTrailMagic(canvas, ctx, noise) {
     width = window.innerWidth
     height = window.innerHeight
     canvas.width = width
-    canvas.height = height
+    canvas.height = height * 2
     initForces()
   }
-
   const initForces = () => {
     var i = 0
     for (var x = 0; x < width; x += 20) {
@@ -26,6 +25,7 @@ export function MouseTrailMagic(canvas, ctx, noise) {
     }
   }
   const initParticles = () => {
+    particles = []
     for (var i = 0; i < nParticles; i++) {
       particles.push(
         new Particle(Math.random() * width, Math.random() * height)
@@ -72,7 +72,7 @@ export function MouseTrailMagic(canvas, ctx, noise) {
   }
 
   const animate = (t) => {
-    ctx.clearRect(0, 0, width, height)
+    ctx.clearRect(0, 0, width, height * 2)
     updateEmitter()
     launchParticle()
     launchParticle()
@@ -82,19 +82,27 @@ export function MouseTrailMagic(canvas, ctx, noise) {
   }
 
   const pointerMove = (e) => {
-    mouse.x = e.touches ? e.touches[0].pageX : e.pageX
-    mouse.y = e.touches ? e.touches[0].pageY : e.pageY
+    mouse.x = e.offsetX ? e.offsetX : e.offsetX
+    mouse.y = e.offsetY ? e.offsetY : e.offsetY
   }
 
+  if (!isMounted) {
+    // TODO check this memory leak isMounted flag not working always
+    window.removeEventListener('resize', resize)
+    window.removeEventListener('mousemove', pointerMove)
+    window.removeEventListener('touchmove', pointerMove)
+    window.removeEventListener('wheel', pointerMove)
+    cancelAnimationFrame(animate)
+  }
   let mouse = new V2(window.innerWidth / 2, window.innerHeight / 2)
   let emitter = new V2(window.innerWidth / 2, window.innerHeight / 2)
   resize()
   initParticles()
   requestAnimationFrame(animate)
-
   window.addEventListener('resize', resize)
   window.addEventListener('mousemove', pointerMove)
   window.addEventListener('touchmove', pointerMove)
+  window.addEventListener('wheel', pointerMove)
 }
 
 export class V2 {

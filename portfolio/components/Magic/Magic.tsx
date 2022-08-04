@@ -1,39 +1,47 @@
 import React, { useEffect, useRef } from 'react'
 import { createNoise3D } from 'simplex-noise'
-import { V2, MouseTrailMagic } from './class1.js'
-function Magic() {
+import { MouseTrailMagic } from './class1.js'
+function Magic({ isVisible }) {
   const canvasRef = useRef()
-  const ctx = canvasRef.current?.getContext('2d')
+  const ctx = useRef()
   const noise = createNoise3D()
+  const mounted = useRef(false)
 
-  //   const animate = useCallback(
-  //     (time) => {
-  //       ctx.clearRect(0, 0, width, height)
-  //       updateEmitter(emitter, mouse)
-  //       requestRef.current = requestAnimationFrame(animate)
-  //     },
-  //     [width, height, ctx, emitter, mouse]
-  //   )
-  //   const handlePointerMove = (e: any) => {
-  //     setMouse(new V2(e.x, e.y))
-  //   }
-  //   useEffect(() => {
-  //     window.addEventListener('mousemove', handlePointerMove)
-  //     window.addEventListener('touchmove', handlePointerMove)
-
-  //     return () => {
-  //       window.removeEventListener('mousemove', handlePointerMove)
-  //       window.removeEventListener('touchmove', handlePointerMove)
-  //     }
-  //   }, [])
   useEffect(() => {
-    if (ctx !== undefined) {
-      MouseTrailMagic(canvasRef.current, ctx, noise)
+    mounted.current = true
+    return () => {
+      mounted.current = false
     }
-  }, [ctx, noise])
+  }, [])
+  useEffect(() => {
+    if (!ctx.current && isVisible) {
+      ctx.current = canvasRef.current?.getContext('2d')
+    }
+  }, [isVisible])
+
+  useEffect(() => {}, [canvasRef, ctx])
+  useEffect(() => {
+    console.log(`ctx equals:`)
+    console.log(ctx)
+    if (
+      ctx.current !== undefined &&
+      window.innerHeight &&
+      window.innerWidth &&
+      isVisible
+    ) {
+      console.log(window.innerHeight)
+      MouseTrailMagic(
+        canvasRef.current,
+        ctx.current,
+        noise,
+        mounted.current,
+        window
+      )
+    }
+  }, [ctx, isVisible])
   return (
-    <div className="h-full w-full">
-      <canvas className="h-full w-full" ref={canvasRef}></canvas>
+    <div className="z-20">
+      <canvas className="z-20 h-full w-full" ref={canvasRef}></canvas>
     </div>
   )
 }
