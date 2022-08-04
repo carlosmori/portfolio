@@ -60,11 +60,11 @@ function Step7({
         style={{}}
       >
         <h1
-          className={`${
-            isVisible
-              ? 'sticky top-1/2 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-              : 'hidden'
-          }`}
+          className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl
+          ${isVisible ? ' animate-fade-in' : 'animate-fade-out'}`}
+          style={{
+            animationDuration: '0.5s',
+          }}
           // style={{
           //   animationDuration: '1.5s',
           //   backgroundImage: 'url(/gifs/blue.gif)',
@@ -75,29 +75,14 @@ function Step7({
         >
           In Different Directions
         </h1>
-        {/* <div
-          className={`absolute h-32 w-32 animate-rotate md:h-96 md:w-96`}
-          style={{
-            // top: `calc(100% - ${percentageOfTheComponentScrolledY}%)`,
-            top: `calc(0% - ${prevScrollX / 30}%`,
-            right: `${percentageOfTheComponentScrolledX}%`,
-            animationDuration: '20s',
-          }}
-        >
-          <Image
-            src={MeteoritoPic1}
-            alt="Picture of the Astronaut 3"
-            className=""
-            layout="responsive"
-          />
-        </div> */}
         <div
-          className={`top absolute h-32 w-32 md:h-96 md:w-96`}
+          className={`top absolute h-56 w-56 md:h-96 md:w-96`}
           ref={astronautRef}
           style={{
             transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
             top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
             right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
+            filter: 'brightness(55%)',
           }}
         >
           <Image

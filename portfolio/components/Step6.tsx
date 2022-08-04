@@ -1,9 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
-import AstronautPic3 from '../public/Pictures/Astronauts/Astronaut-3.svg'
-import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
-import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
+import Saturn2 from '../public/Pictures/Planets/Saturn2.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
@@ -31,12 +29,14 @@ function Step6({ currentScrollY }) {
         >
           Sometimes they Spin
         </h1>
+
         <div
-          className={`absolute left-[5%] h-32 w-32 animate-rotate md:h-96 md:w-96`}
+          className={`absolute left-[5%] h-32 w-32 animate-rotate md:h-72 md:w-72`}
           style={{
             top: `calc(20% - ${offSetTop * 5}%)`,
             left: `calc(5% + ${offSetTop * 5}%)`,
             animationDuration: '20s',
+            filter: 'brightness(85%)',
           }}
         >
           <Image
@@ -52,6 +52,7 @@ function Step6({ currentScrollY }) {
             top: `calc(50% - ${offSetTop * 4}%)`,
             right: `calc(5% + ${offSetTop * 5}%)`,
             animationDuration: '15s',
+            filter: 'brightness(55%)',
           }}
         >
           <Image
@@ -62,15 +63,32 @@ function Step6({ currentScrollY }) {
           />
         </div>
         <div
-          className={`absolute right-[50%] h-32 w-32 animate-rotate md:h-96 md:w-96`}
+          className={`absolute right-[50%] h-32 w-32 animate-rotate md:h-64 md:w-64`}
           style={{
             top: `calc(80% - ${offSetTop * 2}%)`,
             right: `calc(80% - ${offSetTop * 5}%)`,
             animationDuration: '10s',
+            filter: 'brightness(65%)',
           }}
         >
           <Image
             src={MeteoritoPic6}
+            alt="Picture of the Astronaut 3"
+            className=""
+            layout="responsive"
+          />
+        </div>
+        <div
+          className={`absolute right-[5%] z-20 h-32 w-32 md:h-96 md:w-96`}
+          style={{
+            top: `calc(30% + ${offSetTop * 2}%)`,
+            // left: `calc(5% + ${offSetTop * 5}%)`,
+            animationDuration: '20s',
+            filter: 'brightness(85%)',
+          }}
+        >
+          <Image
+            src={Saturn2}
             alt="Picture of the Astronaut 3"
             className=""
             layout="responsive"

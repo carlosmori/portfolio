@@ -11,7 +11,9 @@ function Step1() {
     <div className="content-1 flex h-screen w-screen items-center justify-center text-center text-3xl md:text-5xl">
       <div className="" ref={containerRef}>
         <h1
-          className={`opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
+          className={`px-2 text-center text-2xl opacity-0 md:px-0 md:text-5xl ${
+            isVisible ? 'animate-fade-in' : 'animate-fade-out'
+          }`}
           style={{
             animationDuration: '0.5s',
           }}
