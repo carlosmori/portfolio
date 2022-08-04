@@ -10,19 +10,17 @@ function Step3() {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 0.5,
   })
   return (
     <div className="flex h-[200vh] w-screen text-6xl" ref={containerRef}>
       <div className="relative w-full">
         <h1
-          className={`${
-            isVisible
-              ? 'sticky top-1/2 animate-fade-in px-2 text-center text-2xl md:px-0 md:text-5xl'
-              : 'hidden'
+          className={`sticky top-1/2 px-2 text-center text-2xl md:px-0 md:text-5xl ${
+            isVisible ? ' animate-fade-in' : 'animate-fade-out'
           }`}
           style={{
-            animationDuration: '1.5s',
+            animationDuration: '0.5s',
           }}
         >
           Sometimes things in Space...

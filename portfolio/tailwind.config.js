@@ -21,8 +21,8 @@ module.exports = {
         'spin-slow': 'spin 3s linear infinite',
         wiggle: 'wiggle 1s ease-in-out infinite',
         'smooth-wiggle': 'smooth-wiggle 1s ease-in-out infinite',
-        'fade-in': 'fade-in 3s ease-in-out 1',
-        'fade-out': 'fade-out 3s ease-in-out 1',
+        'fade-in': 'fade-in 3s ease-in forwards 1',
+        'fade-out': 'fade-out 3s ease-out forwards 1',
         'fast-fade-out': 'fade-out 1s ease-in-out 1',
         'fade-in-scaled-up-wiggle':
           'fade-in-scaled-up 1s ease-in-out 1, smooth-wiggle 2s linear 1s 1',

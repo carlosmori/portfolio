@@ -5,21 +5,19 @@ function Step1() {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 1,
   })
   return (
     <div className="content-1 flex h-screen w-screen items-center justify-center text-center text-3xl md:text-5xl">
       <div className="" ref={containerRef}>
-        {isVisible && (
-          <h1
-            className="animate-fade-in font-kanit"
-            style={{
-              animationDuration: '1.5s',
-            }}
-          >
-            Join me on a Space Adventure.
-          </h1>
-        )}
+        <h1
+          className={`opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
+          style={{
+            animationDuration: '0.5s',
+          }}
+        >
+          Join me on a Space Adventure.
+        </h1>
       </div>
     </div>
   )
