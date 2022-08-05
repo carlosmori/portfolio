@@ -7,6 +7,7 @@ import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step8({
   prevScrollY,
@@ -44,13 +45,22 @@ function Step8({
   }, [percentageOfTheComponentScrolledY])
   return (
     <div
-      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden bg-black text-6xl"
+      className="relative flex h-screen w-[200vw] overflow-x-hidden overflow-y-hidden bg-black text-6xl"
       ref={containerRef}
     >
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}
       >
+        <div
+          className="absolute top-0 left-0 z-10 h-full w-full"
+          style={{
+            'background-color': 'black', // Old browsers
+            background:
+              'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%)',
+          }}
+        ></div>
+        <ParallaxStarts />
         <h1
           className={`${
             isVisible

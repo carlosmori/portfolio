@@ -7,6 +7,7 @@ import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step9({
   prevScrollY,
@@ -38,19 +39,18 @@ function Step9({
       (prevScrollX * 100) / containerRef.current.offsetWidth
     )
   }, [prevScrollX, containerRef])
-  useEffect(() => {
-    console.log(`percentageOfTheComponentScrolledY equals:`)
-    console.log(percentageOfTheComponentScrolledY)
-  }, [percentageOfTheComponentScrolledY])
+  useEffect(() => {}, [percentageOfTheComponentScrolledY])
   return (
     <div
-      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden bg-black text-6xl"
+      className="flex h-screen w-[200vw] overflow-x-hidden overflow-y-hidden text-6xl"
       ref={containerRef}
     >
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}
       >
+        <ParallaxStarts />
+
         <h1
           className={`${
             isVisible

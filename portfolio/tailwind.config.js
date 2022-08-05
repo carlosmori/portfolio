@@ -32,6 +32,7 @@ module.exports = {
         'horizontal-bar':
           'horizontal-bar 2s cubic-bezier(.74, .06, .4, .92) forwards;',
         'pop-in': 'pop-in 0.8s cubic-bezier(.74, .06, .4, .92) forwards',
+        floating: 'floating 3s ease-in-out infinite',
       },
 
       colors: {
@@ -82,6 +83,11 @@ module.exports = {
           '50%': { width: '100%', left: '0' },
           '100%': { width: '0', left: '100%' },
         },
+        floating: {
+          '0%': { transform: 'translate(0,  0px)' },
+          '65%': { transform: 'translate(0,  3px)' },
+          '100%': { transform: 'translate(0,  -0px)' },
+        },
         'pop-in': {
           '0% ': {
             width: ' 0px',
@@ -125,5 +131,6 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
     require('autoprefixer'),
+    require('precss'),
   ],
 }

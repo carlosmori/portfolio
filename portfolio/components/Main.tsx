@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import Step1 from './Step1'
 import Step10 from './Step10'
 import Step11 from './Step11'
@@ -49,7 +50,7 @@ function Main() {
   }
   const onScrollHorizontal = (e: any) => {
     // !update this variable when increasing childs
-    const amountOfElementsInHorizontalContainer = 4
+    const amountOfElementsInHorizontalContainer = 6
     const currentScrollX = e.target.scrollTop
     setPrevScrollX(currentScrollX)
     // console.log(`firstHorizontalContainerRef.current equals:`)
@@ -78,11 +79,11 @@ function Main() {
       <Step5 currentScrollY={prevScrollY} />
       <Step6 currentScrollY={prevScrollY} />
       <div
-        className="relative h-screen w-screen bg-blue-500"
+        className="relative h-screen w-screen"
         ref={firstHorizontalContainerRef}
       >
         <div
-          className={`outer-wrapper no-scrollbar absolute h-[100vw] w-[100vh] bg-green-200 ${
+          className={`outer-wrapper no-scrollbar absolute h-[100vw] w-[100vh] ${
             activateHorizontalScroll ? 'overflow-y-scroll' : 'overflow-y-hidden'
           }`}
           style={{
@@ -93,7 +94,7 @@ function Main() {
           onScroll={onScrollHorizontal}
         >
           <div
-            className="wrapper flex h-[100vh] w-[400vw] flex-row flex-wrap"
+            className="wrapper flex h-[100vh] w-[600vw] flex-row flex-wrap"
             style={{
               transform: 'rotate(90deg) translateY(-100vh)',
               transformOrigin: 'top left',
@@ -127,7 +128,6 @@ function Main() {
               }
               amountOfVerticalElements={amountOfVerticalElements}
             />
-            <div className="h-screen w-screen bg-blue-500"></div>
             <div
               className={`absolute z-10 h-screen w-screen`}
               style={{ right: '0' }}

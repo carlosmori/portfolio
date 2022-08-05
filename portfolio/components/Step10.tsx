@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import ContactForm from './ContactForm'
 import Magic from './Magic/Magic'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import Test from './Test'
 
 function Step10({}) {
@@ -20,6 +21,9 @@ function Step10({}) {
         style={{}}
       >
         <div className="flex h-full w-full flex-col">
+          <ParallaxStarts />
+
+          {/* <ParallaxStarts /> */}
           {isVisible && <Magic isVisible={isVisible} />}
           <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center">
             <h1
