@@ -8,6 +8,7 @@ import MeteoritoPic4 from '../public/Pictures/Meteoritos/Meteorito-4.svg'
 import MeteoritoPic5 from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import SpaceRocket from '../public/Pictures/Ufo/spaceRocket.svg'
 import MeditatingUfo from '../public/Pictures/Ufo/Meditating-ufo.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step5({ currentScrollY }) {
   const [containerRef, isVisible] = useElementOnScreen({
@@ -20,7 +21,11 @@ function Step5({ currentScrollY }) {
     setOffSetTop((currentScrollY * 100) / containerRef.current.offsetTop - 100)
   }, [currentScrollY, containerRef])
   return (
-    <div className="flex h-[200vh] w-screen text-6xl " ref={containerRef}>
+    <div
+      className="relative flex h-[200vh] w-screen text-6xl "
+      ref={containerRef}
+    >
+      <ParallaxStarts smallStars={20} mediumStars={5} bigStars={3} />
       <div className="relative w-full">
         <h1
           className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl ${
@@ -47,23 +52,8 @@ function Step5({ currentScrollY }) {
             layout="responsive"
           />
         </div>
-        {/* <div
-          className="absolute md:left-[41%] md:h-32 md:w-32"
-          style={{
-            top: `calc(100% - ${offSetTop * 2.5}%)`,
-            animationDuration: '40s',
-            filter: 'brightness(85%)',
-          }}
-        >
-          <Image
-            src={MeditatingUfo}
-            alt="Picture of the Planet 5"
-            className=""
-            layout="responsive"
-          />
-        </div> */}
       </div>
-      <div className="relative w-full bg-black	">
+      <div className="relative w-full	">
         <div
           className={`absolute top-[10%] right-[30%] block h-40 w-40 md:right-[50%] md:h-80 md:w-80`}
           style={{

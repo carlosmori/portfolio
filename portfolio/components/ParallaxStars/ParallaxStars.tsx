@@ -1,6 +1,10 @@
 import React, { useCallback, useState } from 'react'
-function ParallaxStarts() {
-  const randomIntFromInterval = useCallback((min, max) => {
+function ParallaxStarts({
+  smallStars = 200,
+  mediumStars = 150,
+  bigStars = 100,
+}) {
+  const randomIntFromInterval = useCallback(() => {
     const precision = 100 // 2 decimals
     const randomnum =
       Math.floor(
@@ -11,19 +15,46 @@ function ParallaxStarts() {
     // min and max included
     return randomnum
   }, [])
-  const [arrayOfStars, setArrayOfStars] = useState(
-    Array(450)
+
+  const [arraySmallStars] = useState(
+    Array(smallStars)
       .fill({})
-      .map((el) => {
+      .map(() => {
         return {
-          top: randomIntFromInterval(1, 100),
-          left: randomIntFromInterval(1, 100),
+          top: randomIntFromInterval(),
+          left: randomIntFromInterval(),
+          width: '1px',
+          height: '1px',
+        }
+      })
+  )
+  const [arrayMediumStars] = useState(
+    Array(mediumStars)
+      .fill({})
+      .map(() => {
+        return {
+          top: randomIntFromInterval(),
+          left: randomIntFromInterval(),
+          width: '1px',
+          height: '1px',
+        }
+      })
+  )
+  const [arrayBigStars] = useState(
+    Array(bigStars)
+      .fill({})
+      .map(() => {
+        return {
+          top: randomIntFromInterval(),
+          left: randomIntFromInterval(),
+          width: '1px',
+          height: '1px',
         }
       })
   )
   return (
     <div className="star-wrapper absolute h-full w-full">
-      {[...arrayOfStars].slice(0, 200).map((el, index) => (
+      {arraySmallStars.map((el, index) => (
         <div
           key={index}
           className="absolute h-px w-px rounded-full bg-white"
@@ -33,7 +64,7 @@ function ParallaxStarts() {
           }}
         ></div>
       ))}
-      {[...arrayOfStars].slice(200, 350).map((el, index) => (
+      {arrayMediumStars.map((el, index) => (
         <div
           key={index}
           className="absolute h-0.5 w-0.5 rounded-full bg-white"
@@ -43,7 +74,7 @@ function ParallaxStarts() {
           }}
         ></div>
       ))}
-      {[...arrayOfStars].slice(350, 450).map((el, index) => (
+      {arrayBigStars.map((el, index) => (
         <div
           key={index}
           className="absolute h-1 w-1 rounded-full bg-white"

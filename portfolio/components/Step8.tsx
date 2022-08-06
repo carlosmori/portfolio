@@ -32,7 +32,7 @@ function Step8({
   }, [containerRef, prevScrollX])
   return (
     <div
-      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-gray-900  text-6xl"
+      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden  text-6xl"
       ref={containerRef}
     >
       <div

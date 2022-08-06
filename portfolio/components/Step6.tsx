@@ -5,6 +5,7 @@ import Saturn2 from '../public/Pictures/Planets/Saturn2.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step6({ currentScrollY }) {
   const [containerRef, isVisible] = useElementOnScreen({
@@ -17,7 +18,11 @@ function Step6({ currentScrollY }) {
     setOffSetTop((currentScrollY * 100) / containerRef.current.offsetTop - 100)
   }, [currentScrollY, containerRef])
   return (
-    <div className="flex h-[200vh] w-screen text-6xl " ref={containerRef}>
+    <div
+      className="relative flex h-[200vh] w-screen text-6xl "
+      ref={containerRef}
+    >
+      <ParallaxStarts smallStars={25} mediumStars={10} bigStars={5} />
       <div className="relative w-full">
         <h1
           className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl ${

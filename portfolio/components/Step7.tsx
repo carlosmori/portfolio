@@ -7,6 +7,7 @@ import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step7({
   prevScrollY,
@@ -55,6 +56,7 @@ function Step7({
       className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden  text-6xl"
       ref={containerRef}
     >
+      <ParallaxStarts smallStars={35} mediumStars={25} bigStars={10} />
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}

@@ -44,7 +44,7 @@ function Step11({
   }, [percentageOfTheComponentScrolledY])
   return (
     <div
-      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden bg-black text-6xl"
+      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden text-6xl"
       ref={containerRef}
     >
       <div

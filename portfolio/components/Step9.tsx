@@ -43,11 +43,11 @@ function Step9({
         <ParallaxStarts />
         <ShootingStars />
         <h1
-          className={`${
-            isVisible
-              ? 'sticky top-1/2 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-              : 'hidden'
-          }`}
+          className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl
+           ${isVisible ? ' animate-fade-in' : 'animate-fade-out'}`}
+          style={{
+            animationDuration: '0.5s',
+          }}
         >
           We can find anything in Space...
         </h1>
