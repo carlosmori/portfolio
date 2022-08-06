@@ -33,6 +33,7 @@ module.exports = {
           'horizontal-bar 2s cubic-bezier(.74, .06, .4, .92) forwards;',
         'pop-in': 'pop-in 0.8s cubic-bezier(.74, .06, .4, .92) forwards',
         floating: 'floating 3s ease-in-out infinite',
+        'super-floating': 'super-floating 3s ease-in-out infinite',
       },
 
       colors: {
@@ -86,6 +87,11 @@ module.exports = {
         floating: {
           '0%': { transform: 'translate(0,  0px)' },
           '65%': { transform: 'translate(0,  3px)' },
+          '100%': { transform: 'translate(0,  -0px)' },
+        },
+        'super-floating': {
+          '0%': { transform: 'translate(0,  0px)' },
+          '65%': { transform: 'translate(0,  10px)' },
           '100%': { transform: 'translate(0,  -0px)' },
         },
         'pop-in': {

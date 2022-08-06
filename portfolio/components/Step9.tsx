@@ -1,14 +1,10 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
-import AstronautWatchingPic from '../public/Pictures/Astronauts/Astronaut-watching.svg'
-import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
-import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
-import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
-import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
-import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import ShootingStars from './ShootingStars/ShootingStars'
+import MagicCat from '../public/Pictures/Magic/wizard-cat-color-stroke-by-Vexels.svg'
 
 function Step9({
   prevScrollY,
@@ -19,7 +15,7 @@ function Step9({
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 0.5,
   })
   const [
     percentageOfTheComponentScrolledY,
@@ -29,18 +25,12 @@ function Step9({
     percentageOfTheComponentScrolledX,
     setPercentageOfTheComponentScrolledX,
   ] = useState(0)
-  const astronautRef: any = useRef()
   useEffect(() => {
-    setPercentageOfTheComponentScrolledY(
-      ((prevScrollY * 100) / parentOffSetTop - 90) * 10
-    )
-  }, [prevScrollY, parentOffSetTop])
-  useEffect(() => {
-    setPercentageOfTheComponentScrolledX(
-      (prevScrollX * 100) / containerRef.current.offsetWidth
-    )
-  }, [prevScrollX, containerRef])
-  useEffect(() => {}, [percentageOfTheComponentScrolledY])
+    const percentageOfComponentScrolled =
+      ((prevScrollX - containerRef.current.offsetLeft) * 100) /
+      containerRef.current.offsetWidth
+    setPercentageOfTheComponentScrolledX(percentageOfComponentScrolled)
+  }, [containerRef, prevScrollX])
   return (
     <div
       className="flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden text-6xl"
@@ -58,48 +48,54 @@ function Step9({
               ? 'sticky top-1/2 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
               : 'hidden'
           }`}
-          // style={{
-          //   animationDuration: '1.5s',
-          //   backgroundImage: 'url(/gifs/blue.gif)',
-          //   WebkitBackgroundClip: 'text',
-          //   color: 'transparent',
-          //   backgroundPosition: 'right',
-          // }}
         >
           We can find anything in Space...
         </h1>
-        {/* <div
-          className={`absolute h-32 w-32 animate-rotate md:h-96 md:w-96`}
+        <div
+          className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"
           style={{
-            // top: `calc(100% - ${percentageOfTheComponentScrolledY}%)`,
-            top: `calc(0% - ${prevScrollX / 30}%`,
-            right: `${percentageOfTheComponentScrolledX}%`,
-            animationDuration: '20s',
+            backgroundImage: 'url(/Pictures/Background/galaxy.png)',
+          }}
+        >
+          <div
+            className="absolute top-0 left-0 z-10 h-full w-full"
+            style={{
+              'background-color': 'black', // Old browsers
+              background:
+                'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)',
+            }}
+          ></div>
+        </div>
+        {/* <div
+          className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}
+          style={{
+            bottom: `10%`,
+            left: `30%`,
+            filter: 'brightness(85%)',
           }}
         >
           <Image
-            src={MeteoritoPic1}
+            src={MagicFrog}
             alt="Picture of the Astronaut 3"
             className=""
             layout="responsive"
           />
         </div> */}
-        {/* <div
-          className={`top absolute h-32 w-32 md:h-96 md:w-96`}
-          ref={astronautRef}
+        <div
+          className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}
           style={{
-            transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
-            top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
-            right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
+            bottom: `10%`,
+            left: `70%`,
+            filter: 'brightness(55%)',
           }}
         >
           <Image
-            src={AstronautWatchingPic}
+            src={MagicCat}
             alt="Picture of the Astronaut 3"
             className=""
             layout="responsive"
           />
-        </div> */}
+        </div>
       </div>
     </div>
   )

@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
-import AstronautWatchingPic from '../public/Pictures/Astronauts/Astronaut-watching.svg'
-import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
-import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
-import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
+import HandReachingAstronaut from '../public/Pictures/Astronauts/handReachAstronaut.svg'
+import PlanetPic4 from '../public/Pictures/Planets/Saturn2.svg'
+import PlanetPic5 from '../public/Pictures/Planets/neptune.svg'
+import Ufo1 from '../public/Pictures/Ufo/Ufo-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
-import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import Diamond from '../public/Pictures/Diamonds/Diamond2.png'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step8({
@@ -21,48 +21,32 @@ function Step8({
     threshold: 0.5,
   })
   const [
-    percentageOfTheComponentScrolledY,
-    setPercentageOfTheComponentScrolledY,
-  ] = useState(0)
-  const [
     percentageOfTheComponentScrolledX,
     setPercentageOfTheComponentScrolledX,
   ] = useState(0)
-  const astronautRef: any = useRef()
   useEffect(() => {
-    setPercentageOfTheComponentScrolledY(
-      ((prevScrollY * 100) / parentOffSetTop - 90) * 10
-    )
-  }, [prevScrollY, parentOffSetTop])
-  useEffect(() => {
-    setPercentageOfTheComponentScrolledX(
-      (prevScrollX * 100) / containerRef.current.offsetWidth
-    )
-  }, [prevScrollX, containerRef])
-  useEffect(() => {
-    console.log(`prevScrollX equals:`)
-    console.log(prevScrollX)
-    console.log(`isVisible equals:`)
-    console.log(isVisible)
-  }, [prevScrollX, isVisible])
+    const percentageOfComponentScrolled =
+      ((prevScrollX - containerRef.current.offsetLeft) * 100) /
+      containerRef.current.offsetWidth
+    setPercentageOfTheComponentScrolledX(percentageOfComponentScrolled)
+  }, [containerRef, prevScrollX])
   return (
     <div
-      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-gray-800 bg-black text-6xl"
+      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-gray-900  text-6xl"
       ref={containerRef}
     >
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}
       >
-        {/* TODO Activate this when commiting */}
-        {/* <div
-          className="absolute top-0 left-0 z-10 h-full w-full"
+        <div
+          className="absolute top-0 left-0 z-20 h-full w-full"
           style={{
             'background-color': 'black', // Old browsers
             background:
               'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%)',
           }}
-        ></div> */}
+        ></div>
         <ParallaxStarts />
         <h1
           className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl
@@ -73,38 +57,102 @@ function Step8({
         >
           Meteorites, Planets Ramble
         </h1>
-        {/* <div
-          className={`absolute h-32 w-32 animate-rotate md:h-96 md:w-96`}
+        <div
+          className={`absolute left-0 top-0 h-32 w-32 animate-rotate md:h-32 md:w-32`}
           style={{
-            // top: `calc(100% - ${percentageOfTheComponentScrolledY}%)`,
-            top: `calc(0% - ${prevScrollX / 30}%`,
-            right: `${percentageOfTheComponentScrolledX}%`,
+            top: `calc(20% + ${percentageOfTheComponentScrolledX * 1.3}%)`,
+            // top: `calc(0% - ${prevScrollX / 30}%`,
+            left: `calc(20% + ${percentageOfTheComponentScrolledX * 1.3}%)`,
+            animationDuration: '50s',
+            filter: 'brightness(85%)',
+          }}
+        >
+          <Image
+            src={Diamond}
+            alt="Picture of the Astronaut 3"
+            className=""
+            layout="responsive"
+          />
+        </div>
+        <div
+          className={`absolute z-10 h-32 w-32 md:h-64 md:w-64`}
+          style={{
+            top: `calc(0% + ${percentageOfTheComponentScrolledX}%)`,
+            left: `calc(10% + ${percentageOfTheComponentScrolledX}%)`,
             animationDuration: '20s',
           }}
         >
           <Image
-            src={MeteoritoPic1}
+            src={HandReachingAstronaut}
             alt="Picture of the Astronaut 3"
             className=""
             layout="responsive"
           />
-        </div> */}
-        {/* <div
-          className={`top absolute h-32 w-32 md:h-96 md:w-96`}
-          ref={astronautRef}
+        </div>
+        <div
+          className={`absolute h-32 w-32 animate-rotate md:h-52 md:w-52`}
           style={{
-            transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
-            top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
-            right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
+            top: `calc(0% + ${percentageOfTheComponentScrolledX}%)`,
+            left: `calc(100% - ${percentageOfTheComponentScrolledX}%)`,
+            animationDuration: '20s',
+            filter: 'brightness(85%)',
           }}
         >
           <Image
-            src={AstronautWatchingPic}
+            src={MeteoritoPic2}
             alt="Picture of the Astronaut 3"
             className=""
             layout="responsive"
           />
-        </div> */}
+        </div>
+        <div
+          className={`absolute h-32 w-32 animate-rotate md:h-52 md:w-52`}
+          style={{
+            top: `calc(0% + ${percentageOfTheComponentScrolledX}%)`,
+            left: `calc(100% - ${percentageOfTheComponentScrolledX}%)`,
+            animationDuration: '20s',
+            filter: 'brightness(85%)',
+          }}
+        >
+          <Image
+            src={MeteoritoPic2}
+            alt="Picture of the Astronaut 3"
+            className=""
+            layout="responsive"
+          />
+        </div>
+        <div
+          className={`absolute h-32 w-32 md:h-72 md:w-72`}
+          style={{
+            top: `calc(10%)`,
+            left: `calc(50% - ${percentageOfTheComponentScrolledX * 0.2}%)`,
+            animationDuration: '20s',
+            filter: 'brightness(85%)',
+          }}
+        >
+          <Image
+            src={PlanetPic5}
+            alt="Picture of the Astronaut 3"
+            className=""
+            layout="responsive"
+          />
+        </div>
+        <div
+          className={`absolute h-32 w-32 md:h-56 md:w-56`}
+          style={{
+            bottom: `calc(30% + ${percentageOfTheComponentScrolledX * 0.5}%)`,
+            right: `5%`,
+            animationDuration: '20s',
+            filter: 'brightness(55%)',
+          }}
+        >
+          <Image
+            src={Ufo1}
+            alt="Picture of the Astronaut 3"
+            className=""
+            layout="responsive"
+          />
+        </div>
       </div>
     </div>
   )
