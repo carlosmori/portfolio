@@ -8,6 +8,7 @@ import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
+import ShootingStars from './ShootingStars/ShootingStars'
 
 function Step9({
   prevScrollY,
@@ -42,7 +43,7 @@ function Step9({
   useEffect(() => {}, [percentageOfTheComponentScrolledY])
   return (
     <div
-      className="flex h-screen w-[200vw] overflow-x-hidden overflow-y-hidden text-6xl"
+      className="flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden text-6xl"
       ref={containerRef}
     >
       <div
@@ -50,7 +51,7 @@ function Step9({
         style={{}}
       >
         <ParallaxStarts />
-
+        <ShootingStars />
         <h1
           className={`${
             isVisible

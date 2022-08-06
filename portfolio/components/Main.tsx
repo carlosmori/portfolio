@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
+import ShootingStars from './ShootingStars/ShootingStars'
 import Step1 from './Step1'
 import Step10 from './Step10'
 import Step11 from './Step11'
@@ -50,13 +51,9 @@ function Main() {
   }
   const onScrollHorizontal = (e: any) => {
     // !update this variable when increasing childs
-    const amountOfElementsInHorizontalContainer = 6
+    const amountOfElementsInHorizontalContainer = 5
     const currentScrollX = e.target.scrollTop
     setPrevScrollX(currentScrollX)
-    // console.log(`firstHorizontalContainerRef.current equals:`)
-    // console.log(firstHorizontalContainerRef.current)
-    // console.log(`currentScrollY equals:`)
-    // console.log(currentScrollY)
     setActivateVerticalScroll(
       currentScrollX ===
         firstHorizontalContainerRef?.current?.offsetWidth *
@@ -94,7 +91,7 @@ function Main() {
           onScroll={onScrollHorizontal}
         >
           <div
-            className="wrapper flex h-[100vh] w-[600vw] flex-row flex-wrap"
+            className="wrapper flex h-[100vh] w-[500vw] flex-row flex-wrap"
             style={{
               transform: 'rotate(90deg) translateY(-100vh)',
               transformOrigin: 'top left',

@@ -45,7 +45,7 @@ function Step8({
   }, [percentageOfTheComponentScrolledY])
   return (
     <div
-      className="relative flex h-screen w-[200vw] overflow-x-hidden overflow-y-hidden bg-black text-6xl"
+      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-black text-6xl"
       ref={containerRef}
     >
       <div
