@@ -26,7 +26,7 @@ function ParallaxStarts() {
       {[...arrayOfStars].slice(0, 200).map((el, index) => (
         <div
           key={index}
-          className="absolute h-px w-px animate-floating rounded-full bg-white"
+          className="absolute h-px w-px rounded-full bg-white"
           style={{
             top: `${el.top}%`,
             left: `${el.left}%`,
@@ -36,7 +36,7 @@ function ParallaxStarts() {
       {[...arrayOfStars].slice(200, 350).map((el, index) => (
         <div
           key={index}
-          className="absolute h-0.5 w-0.5 animate-floating rounded-full bg-white"
+          className="absolute h-0.5 w-0.5 rounded-full bg-white"
           style={{
             top: `${el.top}%`,
             left: `${el.left}%`,
@@ -46,7 +46,7 @@ function ParallaxStarts() {
       {[...arrayOfStars].slice(350, 450).map((el, index) => (
         <div
           key={index}
-          className="absolute h-1 w-1 animate-floating rounded-full bg-white"
+          className="absolute h-1 w-1 rounded-full bg-white"
           style={{
             top: `${el.top}%`,
             left: `${el.left}%`,

@@ -17,7 +17,7 @@ function Step7({
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 0.7,
   })
   const [
     percentageOfTheComponentScrolledY,
@@ -38,6 +38,18 @@ function Step7({
       (prevScrollX * 100) / containerRef.current.offsetWidth
     )
   }, [prevScrollX, containerRef])
+  useEffect(() => {
+    console.log(`percentageOfTheComponentScrolledY equals:`)
+    console.log(percentageOfTheComponentScrolledY)
+  }, [percentageOfTheComponentScrolledY])
+  // useEffect(() => {
+  //   console.log(`prevScrollX equals:`)
+  //   console.log(prevScrollX)
+  //   console.log(`containerRef.current.offsetWidth equals:`)
+  //   console.log(containerRef.current.offsetWidth)
+  //   console.log(`(prevScrollX * 100 / ) equals:`)
+  //   console.log((prevScrollX * 100) / containerRef.current.offsetWidth)
+  // }, [prevScrollX])
   return (
     <div
       className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden  text-6xl"

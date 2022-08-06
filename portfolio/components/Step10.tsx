@@ -3,6 +3,7 @@ import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import ContactForm from './ContactForm'
 import Magic from './Magic/Magic'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
+import ShootingStars from './ShootingStars/ShootingStars'
 import Test from './Test'
 
 function Step10({}) {
@@ -22,10 +23,25 @@ function Step10({}) {
       >
         <div className="flex h-full w-full flex-col">
           <ParallaxStarts />
-
           {/* <ParallaxStarts /> */}
           {isVisible && <Magic isVisible={isVisible} />}
-          <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center">
+          <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center ">
+            <div
+              className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"
+              style={{
+                backgroundImage:
+                  'url(/Pictures/Background/astroman-stars-high-quality-space-background-1038774.png)',
+              }}
+            >
+              <div
+                className="absolute top-0 left-0 z-10 h-full w-full"
+                style={{
+                  'background-color': 'black', // Old browsers
+                  background:
+                    'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)',
+                }}
+              ></div>
+            </div>
             <h1
               className={`${
                 isVisible

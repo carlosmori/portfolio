@@ -18,7 +18,7 @@ function Step8({
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 0.5,
   })
   const [
     percentageOfTheComponentScrolledY,
@@ -40,40 +40,36 @@ function Step8({
     )
   }, [prevScrollX, containerRef])
   useEffect(() => {
-    console.log(`percentageOfTheComponentScrolledY equals:`)
-    console.log(percentageOfTheComponentScrolledY)
-  }, [percentageOfTheComponentScrolledY])
+    console.log(`prevScrollX equals:`)
+    console.log(prevScrollX)
+    console.log(`isVisible equals:`)
+    console.log(isVisible)
+  }, [prevScrollX, isVisible])
   return (
     <div
-      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-black text-6xl"
+      className="relative flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden bg-gray-800 bg-black text-6xl"
       ref={containerRef}
     >
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}
       >
-        <div
+        {/* TODO Activate this when commiting */}
+        {/* <div
           className="absolute top-0 left-0 z-10 h-full w-full"
           style={{
             'background-color': 'black', // Old browsers
             background:
               'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%)',
           }}
-        ></div>
+        ></div> */}
         <ParallaxStarts />
         <h1
-          className={`${
-            isVisible
-              ? 'sticky top-1/2 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-              : 'hidden'
-          }`}
-          // style={{
-          //   animationDuration: '1.5s',
-          //   backgroundImage: 'url(/gifs/blue.gif)',
-          //   WebkitBackgroundClip: 'text',
-          //   color: 'transparent',
-          //   backgroundPosition: 'right',
-          // }}
+          className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl
+          ${isVisible ? ' animate-fade-in' : 'animate-fade-out'}`}
+          style={{
+            animationDuration: '0.5s',
+          }}
         >
           Meteorites, Planets Ramble
         </h1>
