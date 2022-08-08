@@ -53,10 +53,10 @@ function Step7({
   // }, [prevScrollX])
   return (
     <div
-      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden  text-6xl"
+      className="relative flex h-screen w-screen overflow-x-hidden overflow-y-hidden  text-6xl"
       ref={containerRef}
     >
-      <ParallaxStarts smallStars={35} mediumStars={25} bigStars={10} />
+      <ParallaxStarts smallStars={30} mediumStars={20} bigStars={10} />
       <div
         className="relative flex w-full items-center justify-center"
         style={{}}
@@ -75,7 +75,7 @@ function Step7({
           //   backgroundPosition: 'right',
           // }}
         >
-          In Different Directions
+          I Dont Think So...
         </h1>
         <div
           className={`top absolute h-56 w-56 md:h-96 md:w-96`}
@@ -84,7 +84,7 @@ function Step7({
             transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
             top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
             right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
-            filter: 'brightness(55%)',
+            filter: 'brightness(45%)',
           }}
         >
           <Image

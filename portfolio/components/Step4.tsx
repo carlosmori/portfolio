@@ -6,6 +6,7 @@ import Saturn from '../public/Pictures/Planets/Saturn.svg'
 import MeteoritoPic7 from '../public/Pictures/Meteoritos/Meteorito-7.svg'
 import Alien from '../public/Pictures/Ufo/alien-arms.svg'
 import UfoPic1 from '../public/Pictures/Ufo/Ufo-1.svg'
+import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step4() {
   const [containerRef, isVisible] = useElementOnScreen({
@@ -15,9 +16,11 @@ function Step4() {
   })
   return (
     <div
-      className="flex h-[200vh] w-screen text-center text-6xl"
+      className="relative flex h-[200vh] w-screen text-center text-6xl"
       ref={containerRef}
     >
+      <ParallaxStarts smallStars={7} mediumStars={3} bigStars={2} />
+
       <div className="relative w-full">
         <div
           className="absolute top-[30%] left-[0%] h-56 w-56 md:top-[40%] md:left-[5%] md:h-96	md:w-96"
@@ -49,7 +52,7 @@ function Step4() {
 
       <div className="relative w-full ">
         <div
-          className="absolute top-[25%] right-[10%] h-36 w-36 md:top-[30%] md:left-[35%] md:h-72	md:w-72"
+          className="absolute top-[25%] right-[10%] h-36 w-36 animate-super-floating md:top-[30%] md:left-[35%] md:h-72	md:w-72"
           style={{
             filter: 'brightness(85%)',
           }}
@@ -69,7 +72,7 @@ function Step4() {
             animationDuration: '0.5s',
           }}
         >
-          Remain Still
+          Unless Gravity Pulls Them
         </h1>
       </div>
     </div>

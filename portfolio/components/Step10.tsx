@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
+import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
+import FancyButton from './FancyButton'
 
 import Magic from './Magic/Magic'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import ShootingStars from './ShootingStars/ShootingStars'
 import Test from './Test'
 
-function Step10({}) {
+function Step10({ callback, contactMeRef }) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
@@ -46,14 +48,32 @@ function Step10({}) {
             <h1
               className={`${
                 isVisible
-                  ? 'pointer-events-none z-0 animate-fade-in cursor-default px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
+                  ? 'pointer-events-none z-10 animate-fade-in cursor-default px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
                   : 'hidden'
               }`}
             >
-              Even Magic
+              Even Magic Frog
             </h1>
+            <div
+              className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}
+              style={{
+                top: `30%`,
+                left: `50%`,
+                filter: 'brightness(75%)',
+              }}
+            >
+              <Image
+                src={MagicFrog}
+                alt="Picture of the Astronaut 3"
+                className=""
+                layout="responsive"
+              />
+            </div>
           </div>
-          <div className="absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center">
+          <div
+            ref={contactMeRef}
+            className="absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center"
+          >
             <h1
               className={`${
                 isVisible

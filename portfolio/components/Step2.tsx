@@ -25,7 +25,7 @@ function Step2() {
           className={`z-10 px-2 text-center text-2xl md:px-0 md:text-5xl
           `}
         >
-          Where we will bring modernity to web
+          Where we will progressively bring modernity to web
         </h1>
         <div
           ref={astronautRef}

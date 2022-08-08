@@ -18,7 +18,7 @@ function Step1() {
             animationDuration: '0.5s',
           }}
         >
-          Join me on a Space Adventure.
+          Join me on a Space Journey.
         </h1>
       </div>
     </div>

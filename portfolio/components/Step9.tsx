@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
-import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import ShootingStars from './ShootingStars/ShootingStars'
 import MagicCat from '../public/Pictures/Magic/wizard-cat-color-stroke-by-Vexels.svg'
@@ -49,7 +48,7 @@ function Step9({
             animationDuration: '0.5s',
           }}
         >
-          We can find anything in Space...
+          Finally I Think We Can Find Anything in Space...
         </h1>
         <div
           className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"

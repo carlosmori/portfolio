@@ -32,7 +32,7 @@ function Step6({ currentScrollY }) {
             animationDuration: '0.5s',
           }}
         >
-          Sometimes they Spin
+          In The Same Direction?
         </h1>
 
         <div

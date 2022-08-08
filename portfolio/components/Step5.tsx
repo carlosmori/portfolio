@@ -35,7 +35,7 @@ function Step5({ currentScrollY }) {
             animationDuration: '0.5s',
           }}
         >
-          Other times they float
+          In That Case They Ramble...
         </h1>
         <div
           className="absolute left-[15%] h-32 w-32 md:left-[30%] md:h-72 md:w-72"

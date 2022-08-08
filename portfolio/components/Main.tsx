@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import FancyButton from './FancyButton'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import ShootingStars from './ShootingStars/ShootingStars'
 import Step1 from './Step1'
@@ -25,6 +26,7 @@ function Main() {
   const firstHorizontalContainerRef: any = useRef(null)
   const firstHorizontalContainerChildRef: any = useRef(null)
   const amountOfVerticalElements = 11
+  const contactMeRef = useRef()
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
     setPrevScrollY(currentScrollY)
@@ -49,6 +51,9 @@ function Main() {
           amountOfVerticalElements
     )
   }
+  const scrollTo = () => {
+    contactMeRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
   const onScrollHorizontal = (e: any) => {
     // !update this variable when increasing childs
     const amountOfElementsInHorizontalContainer = 5
@@ -66,9 +71,10 @@ function Main() {
       ref={mainContainerRef}
       onScroll={onScrollMain}
     >
-      <div className="h-screen">
-        <Welcome />
+      <div className="absolute top-0 right-0">
+        <FancyButton callback={scrollTo} text="Contact Me" />
       </div>
+      <Welcome />
       <Step1 />
       <Step2 />
       <Step3 />
@@ -144,6 +150,7 @@ function Main() {
                     amountOfVerticalElements
                   }
                   amountOfVerticalElements={amountOfVerticalElements}
+                  contactMeRef={contactMeRef}
                 />
               </div>
             </div>
