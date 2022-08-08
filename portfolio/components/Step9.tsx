@@ -48,7 +48,7 @@ function Step9({
             animationDuration: '0.5s',
           }}
         >
-          Finally I Think We Can Find Anything in Space...
+          We Can Find Anything in Space...
         </h1>
         <div
           className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"

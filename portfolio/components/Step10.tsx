@@ -52,7 +52,7 @@ function Step10({ callback, contactMeRef }) {
                   : 'hidden'
               }`}
             >
-              Even Magic Frog
+              Even A Magic Frog
             </h1>
             <div
               className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}

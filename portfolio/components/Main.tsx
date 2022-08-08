@@ -72,7 +72,7 @@ function Main() {
       onScroll={onScrollMain}
     >
       <div className="absolute top-0 right-0">
-        <FancyButton callback={scrollTo} text="Contact Me" />
+        <FancyButton callback={scrollTo} text="About Me" />
       </div>
       <Welcome />
       <Step1 />

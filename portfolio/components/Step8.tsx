@@ -55,7 +55,7 @@ function Step8({
             animationDuration: '0.5s',
           }}
         >
-          Some Much Yet To Be Found
+          So Close...
         </h1>
         {/* Diamond */}
         <div
