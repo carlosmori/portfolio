@@ -1,113 +1,87 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import { useElementOnScreen } from '../hooks/useElementOnScreen'
-import AstronautWatchingPic from '../public/Pictures/Astronauts/Astronaut-watching.svg'
-import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
-import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
-import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
-import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
-import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
+import React from 'react'
+import CVRound from '../public/contactIcons/cv-round.png'
+import CVSquare from '../public/contactIcons/cv-square.png'
+import Link from '../public/contactIcons/link.png'
 
-function ContactForm({
-  prevScrollY,
-  prevScrollX,
-  parentOffSetTop,
-  amountOfVerticalElements,
-}) {
-  const [containerRef, isVisible] = useElementOnScreen({
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1,
-  })
-  const [
-    percentageOfTheComponentScrolledY,
-    setPercentageOfTheComponentScrolledY,
-  ] = useState(0)
-  const [
-    percentageOfTheComponentScrolledX,
-    setPercentageOfTheComponentScrolledX,
-  ] = useState(0)
-  const astronautRef: any = useRef()
-  useEffect(() => {
-    setPercentageOfTheComponentScrolledY(
-      ((prevScrollY * 100) / parentOffSetTop - 90) * 10
-    )
-  }, [prevScrollY, parentOffSetTop])
-  useEffect(() => {
-    setPercentageOfTheComponentScrolledX(
-      (prevScrollX * 100) / containerRef.current.offsetWidth
-    )
-  }, [prevScrollX, containerRef])
-  useEffect(() => {
-    console.log(`percentageOfTheComponentScrolledY equals:`)
-    console.log(percentageOfTheComponentScrolledY)
-  }, [percentageOfTheComponentScrolledY])
+function ContactForm() {
   return (
     <div
-      className="flex h-screen w-screen overflow-x-hidden overflow-y-hidden bg-black text-6xl"
-      ref={containerRef}
+      className="relative flex h-[90%] w-[45%] flex-col items-center p-16"
+      style={{
+        backgroundColor: '#000000b3',
+      }}
     >
+      {/* <div
+        className="absolute top-0 left-0 h-[20%] w-[40%] "
+        style={{
+          borderLeft: '1px solid #ffcb00',
+          borderTop: '1px solid #ffcb00',
+        }}
+      ></div>
       <div
-        className="relative flex w-full flex-col items-center justify-center"
-        style={{}}
+        className="absolute bottom-0 right-0 h-[60%] w-[40%] "
+        style={{
+          borderRight: '1px solid #ffcb00',
+          borderBottom: '1px solid #ffcb00',
+        }}
+      ></div> */}
+
+      <div
+        className="h-48 w-48 animate-floating rounded-full"
+        style={{
+          backgroundImage: 'url(/ProfilePhotos/perfil3.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          pointerEvents: 'none',
+          border: '1px solid white',
+        }}
+      ></div>
+
+      <h1
+        className="animate-super-floating font-fancy text-xl md:text-6xl"
+        style={{
+          backgroundImage: 'url(/gifs/fusion.gif)',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
+          backgroundPosition: 'center',
+        }}
       >
-        <h1
-          className={`${
-            isVisible
-              ? 'sticky top-1/4 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-              : 'hidden'
-          }`}
-          // style={{
-          //   animationDuration: '1.5s',
-          //   backgroundImage: 'url(/gifs/blue.gif)',
-          //   WebkitBackgroundClip: 'text',
-          //   color: 'transparent',
-          //   backgroundPosition: 'right',
-          // }}
+        Charlie Mori
+      </h1>
+      <div className="mt-8 flex flex-col items-center justify-center text-center">
+        <p
+          className="animate-floating py-2 md:text-2xl"
+          style={{
+            backgroundImage: 'url(/gifs/fire2.gif)',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            backgroundPosition: 'right',
+          }}
         >
-          Lets Build Something Together
-        </h1>
-        <h2
-          className={`${
-            isVisible
-              ? 'sticky top-1/2 z-10 animate-fade-in px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-              : 'hidden'
-          }`}
+          Fullstack Javascript Dev for 6+ Years.
+        </p>
+        <p className="animate-floating py-2 md:text-2xl">
+          Specialized in Frontend Development.
+        </p>
+        <p className="animate-floating py-2 md:text-2xl">
+          Digital Nomad - Currently based in Australia.
+        </p>
+        <p className="animate-floating py-2 md:text-2xl">
+          Great communication skills.
+        </p>
+        <a
+          className="z-50 w-fit animate-floating md:text-2xl"
+          style={{
+            backgroundImage: 'url(/gifs/fusion.gif)',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            backgroundPosition: 'center',
+            borderBottom: '1px solid #9e68d7',
+          }}
         >
           Contact Me
-        </h2>
-        {/* <div
-          className={`absolute h-32 w-32 animate-rotate md:h-96 md:w-96`}
-          style={{
-            // top: `calc(100% - ${percentageOfTheComponentScrolledY}%)`,
-            top: `calc(0% - ${prevScrollX / 30}%`,
-            right: `${percentageOfTheComponentScrolledX}%`,
-            animationDuration: '20s',
-          }}
-        >
-          <Image
-            src={MeteoritoPic1}
-            alt="Picture of the Astronaut 3"
-            className=""
-            layout="responsive"
-          />
-        </div> */}
-        {/* <div
-          className={`top absolute h-32 w-32 md:h-96 md:w-96`}
-          ref={astronautRef}
-          style={{
-            transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
-            top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
-            right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
-          }}
-        >
-          <Image
-            src={AstronautWatchingPic}
-            alt="Picture of the Astronaut 3"
-            className=""
-            layout="responsive"
-          />
-        </div> */}
+        </a>
       </div>
     </div>
   )

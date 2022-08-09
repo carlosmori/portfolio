@@ -57,9 +57,8 @@ function Step9({
           }}
         >
           <div
-            className="absolute top-0 left-0 z-10 h-full w-full"
+            className="absolute top-0 left-0 z-10 h-full w-full bg-black"
             style={{
-              'background-color': 'black', // Old browsers
               background:
                 'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)',
             }}

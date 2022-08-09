@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
+import ContactForm from './ContactForm'
 import FancyButton from './FancyButton'
 
 import Magic from './Magic/Magic'
@@ -72,9 +73,11 @@ function Step10({ callback, contactMeRef }) {
           </div>
           <div
             ref={contactMeRef}
-            className="absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center"
+            className="absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center overflow-hidden"
           >
-            <h1
+            {/* <ShootingStars /> */}
+
+            {/* <h1
               className={`${
                 isVisible
                   ? 'pointer-events-none z-0 animate-fade-in cursor-default px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
@@ -82,7 +85,8 @@ function Step10({ callback, contactMeRef }) {
               }`}
             >
               Contact Me
-            </h1>
+            </h1> */}
+            <ContactForm />
           </div>
           {/* <div className="pointer-events-none absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center">
             <ContactForm />
