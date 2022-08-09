@@ -8,9 +8,11 @@ function ContactForm() {
   return (
     <div
       className="relative flex h-[90%] w-[45%] flex-col items-center p-16"
-      style={{
-        backgroundColor: '#000000b3',
-      }}
+      style={
+        {
+          // backgroundColor: '#000000b3',
+        }
+      }
     >
       {/* <div
         className="absolute top-0 left-0 h-[20%] w-[40%] "
@@ -28,7 +30,7 @@ function ContactForm() {
       ></div> */}
 
       <div
-        className="h-48 w-48 animate-floating rounded-full"
+        className="h-48 w-48 animate-super-floating rounded-full"
         style={{
           backgroundImage: 'url(/ProfilePhotos/perfil3.jpg)',
           backgroundSize: 'cover',
@@ -39,7 +41,7 @@ function ContactForm() {
       ></div>
 
       <h1
-        className="animate-super-floating font-fancy text-xl md:text-6xl"
+        className="animate-floating font-fancy text-xl md:text-6xl"
         style={{
           backgroundImage: 'url(/gifs/fusion.gif)',
           WebkitBackgroundClip: 'text',
@@ -71,7 +73,7 @@ function ContactForm() {
           Great communication skills.
         </p>
         <a
-          className="z-50 w-fit animate-floating md:text-2xl"
+          className="z-50 w-fit animate-floating cursor-pointer md:text-2xl"
           style={{
             backgroundImage: 'url(/gifs/fusion.gif)',
             WebkitBackgroundClip: 'text',
@@ -79,6 +81,9 @@ function ContactForm() {
             backgroundPosition: 'center',
             borderBottom: '1px solid #9e68d7',
           }}
+          href="https://linktr.ee/charliemori"
+          target="_blank"
+          rel="noreferrer"
         >
           Contact Me
         </a>

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
+import Meteorito from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import ContactForm from './ContactForm'
 import FancyButton from './FancyButton'
 
@@ -87,6 +88,23 @@ function Step10({ callback, contactMeRef }) {
               Contact Me
             </h1> */}
             <ContactForm />
+          </div>
+          {/*  */}
+          <div
+            className={`absolute h-32 w-32  animate-translate-out-of-bound md:h-72 md:w-72`}
+            style={{
+              bottom: `50%`,
+              left: `-300px`,
+              filter: 'brightness(25%)',
+              animationDuration: '20s',
+            }}
+          >
+            <Image
+              src={Meteorito}
+              alt="Picture of the Astronaut 3"
+              className=""
+              layout="responsive"
+            />
           </div>
           {/* <div className="pointer-events-none absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center">
             <ContactForm />
