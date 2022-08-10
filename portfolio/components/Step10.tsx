@@ -24,7 +24,7 @@ function Step10({ contactMeRef }) {
       >
         <div className="flex h-full w-full flex-col">
           <ParallaxStarts />
-          {isVisible && <Magic isVisible={isVisible} />}
+          {/* {isVisible && <Magic isVisible={isVisible} />} */}
           <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center ">
             <div
               className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"
@@ -70,22 +70,7 @@ function Step10({ contactMeRef }) {
           >
             <ContactForm />
           </div>
-          <div
-            className={`absolute h-32 w-32  animate-translate-out-of-bound md:h-72 md:w-72`}
-            style={{
-              bottom: `50%`,
-              left: `-300px`,
-              filter: 'brightness(25%)',
-              animationDuration: '20s',
-            }}
-          >
-            <Image
-              src={Meteorito}
-              alt="Picture of the Astronaut 3"
-              className=""
-              layout="responsive"
-            />
-          </div>
+          {/*  */}
         </div>
       </div>
     </div>

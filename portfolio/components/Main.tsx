@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useWindowSize } from '../hooks/useWindowSize'
 import FancyButton from './FancyButton'
 import Step1 from './Step1'
 import Step10 from './Step10'
@@ -20,8 +21,11 @@ function Main() {
   const [prevScrollY, setPrevScrollY] = useState(0)
   const [prevScrollX, setPrevScrollX] = useState(0)
   const mainContainerRef = useRef(null)
+  const mainHorizontalContainerRef: any = useRef(null)
+  const secondaryVerticalContainerRef: any = useRef(null)
   const firstHorizontalContainerRef: any = useRef(null)
   const firstHorizontalContainerChildRef: any = useRef(null)
+  const [activateMainOverflow, setActivateMainOverflow] = useState(true)
   const amountOfVerticalElements = 11
   const contactMeRef = useRef()
   const onScrollMain = (e: any) => {
@@ -36,6 +40,14 @@ function Main() {
   const scrollTo = () => {
     contactMeRef.current.scrollIntoView({ behavior: 'smooth' })
   }
+  const [height, width] = useWindowSize()
+  useEffect(() => {
+    setActivateMainOverflow(false)
+    secondaryVerticalContainerRef.current.scrollTo(0, 0)
+    mainHorizontalContainerRef.current.scrollTo(0, 0)
+    mainContainerRef.current.scroll(0, 0)
+    setActivateMainOverflow(true)
+  }, [height, width])
   const onScrollHorizontal = (e: any) => {
     // !update this variable when increasing childs
     const amountOfElementsInHorizontalContainer = 5
@@ -49,7 +61,11 @@ function Main() {
   }
   return (
     <main
-      className="no-scrollbar relative h-screen w-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden bg-black font-kanit font-light"
+      className={`no-scrollbar relative h-screen w-screen snap-y snap-mandatory bg-black font-kanit font-light ${
+        activateMainOverflow
+          ? 'overflow-y-auto overflow-x-hidden'
+          : 'overflow-auto'
+      }`}
       ref={mainContainerRef}
       onScroll={onScrollMain}
     >
@@ -77,6 +93,7 @@ function Main() {
             overflowX: 'hidden',
           }}
           onScroll={onScrollHorizontal}
+          ref={mainHorizontalContainerRef}
         >
           <div
             className="wrapper flex h-[100vh] w-[500vw] flex-row flex-wrap"
@@ -94,17 +111,9 @@ function Main() {
               }
             />
             <Step8 prevScrollX={prevScrollX} />
-            <Step9
-              prevScrollY={prevScrollY}
-              prevScrollX={prevScrollX}
-              parentOffSetTop={
-                firstHorizontalContainerRef?.current?.offsetHeight *
-                amountOfVerticalElements
-              }
-              amountOfVerticalElements={amountOfVerticalElements}
-            />
+            <Step9 prevScrollX={prevScrollX} />
             <div
-              className={`absolute z-10 h-screen w-screen`}
+              className={`absolute z-10 h-full w-screen`}
               style={{ right: '0' }}
             >
               <div
@@ -113,6 +122,7 @@ function Main() {
                     ? 'overflow-y-scroll'
                     : 'overflow-y-hidden'
                 }`}
+                ref={secondaryVerticalContainerRef}
               >
                 <Step10 contactMeRef={contactMeRef} />
               </div>
