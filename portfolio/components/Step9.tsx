@@ -1,35 +1,16 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 import ShootingStars from './ShootingStars/ShootingStars'
 import MagicCat from '../public/Pictures/Magic/wizard-cat-color-stroke-by-Vexels.svg'
 
-function Step9({
-  prevScrollY,
-  prevScrollX,
-  parentOffSetTop,
-  amountOfVerticalElements,
-}) {
+function Step9() {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
   })
-  const [
-    percentageOfTheComponentScrolledY,
-    setPercentageOfTheComponentScrolledY,
-  ] = useState(0)
-  const [
-    percentageOfTheComponentScrolledX,
-    setPercentageOfTheComponentScrolledX,
-  ] = useState(0)
-  useEffect(() => {
-    const percentageOfComponentScrolled =
-      ((prevScrollX - containerRef.current.offsetLeft) * 100) /
-      containerRef.current.offsetWidth
-    setPercentageOfTheComponentScrolledX(percentageOfComponentScrolled)
-  }, [containerRef, prevScrollX])
   return (
     <div
       className="flex h-screen w-[150vw] overflow-x-hidden overflow-y-hidden text-6xl"

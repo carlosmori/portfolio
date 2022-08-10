@@ -1,4 +1,4 @@
-export function MouseTrailMagic(canvas, ctx, noise, isMounted, windowObj) {
+export function MouseTrailMagic(canvas, ctx, noise, isMounted) {
   let nParticles = 250
   let p = 0
   let forces = []
@@ -125,7 +125,7 @@ export class V2 {
 }
 
 export class Particle {
-  constructor(x, y) {
+  constructor() {
     this.position = new V2(-100, -100)
     this.velocity = new V2()
     this.acceleration = new V2()

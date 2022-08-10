@@ -2,12 +2,12 @@ import Image from 'next/image'
 import React from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
-import Meteorito from '../public/Pictures/Meteoritos/Meteorito-5.svg'
+// import Meteorito from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import ContactForm from './ContactForm'
 import Magic from './Magic/Magic'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step10({ contactMeRef }) {
+function Step10({ contactMeRef }: any) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
@@ -24,7 +24,7 @@ function Step10({ contactMeRef }) {
       >
         <div className="flex h-full w-full flex-col">
           <ParallaxStarts />
-          {/* {isVisible && <Magic isVisible={isVisible} />} */}
+          {isVisible && <Magic isVisible={isVisible} />}
           <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center ">
             <div
               className="absolute h-full w-full bg-contain bg-center bg-no-repeat opacity-50"

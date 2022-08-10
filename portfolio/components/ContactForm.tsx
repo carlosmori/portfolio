@@ -1,34 +1,13 @@
-import Image from 'next/image'
 import React from 'react'
-import CVRound from '../public/contactIcons/cv-round.png'
-import CVSquare from '../public/contactIcons/cv-square.png'
-import Link from '../public/contactIcons/link.png'
 
 function ContactForm() {
   return (
     <div
       className="relative flex h-[90%] w-[90%] flex-col items-center justify-center p-4 md:w-[45%] md:p-16"
-      style={
-        {
-          // backgroundColor: '#000000b3',
-        }
-      }
+      style={{
+        backgroundColor: '#000000ba',
+      }}
     >
-      {/* <div
-        className="absolute top-0 left-0 h-[20%] w-[40%] "
-        style={{
-          borderLeft: '1px solid #ffcb00',
-          borderTop: '1px solid #ffcb00',
-        }}
-      ></div>
-      <div
-        className="absolute bottom-0 right-0 h-[60%] w-[40%] "
-        style={{
-          borderRight: '1px solid #ffcb00',
-          borderBottom: '1px solid #ffcb00',
-        }}
-      ></div> */}
-
       <div
         className="h-36 w-36 animate-super-floating rounded-full md:h-48 md:w-48"
         style={{

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export class V2 {
   constructor(x, y) {
     this.x = x || 0
@@ -18,7 +19,7 @@ export class V2 {
 }
 
 export class Particle {
-  constructor(x, y) {
+  constructor() {
     this.position = new V2(-100, -100)
     this.velocity = new V2()
     this.acceleration = new V2()

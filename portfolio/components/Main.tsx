@@ -20,14 +20,14 @@ function Main() {
 
   const [prevScrollY, setPrevScrollY] = useState(0)
   const [prevScrollX, setPrevScrollX] = useState(0)
-  const mainContainerRef = useRef(null)
-  const mainHorizontalContainerRef: any = useRef(null)
-  const secondaryVerticalContainerRef: any = useRef(null)
-  const firstHorizontalContainerRef: any = useRef(null)
-  const firstHorizontalContainerChildRef: any = useRef(null)
+  const mainContainerRef: any = useRef()
+  const mainHorizontalContainerRef: any = useRef()
+  const secondaryVerticalContainerRef: any = useRef()
+  const firstHorizontalContainerRef: any = useRef()
+  const firstHorizontalContainerChildRef: any = useRef()
   const [activateMainOverflow, setActivateMainOverflow] = useState(true)
   const amountOfVerticalElements = 11
-  const contactMeRef = useRef()
+  const contactMeRef: any = useRef()
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
     setPrevScrollY(currentScrollY)
@@ -111,7 +111,7 @@ function Main() {
               }
             />
             <Step8 prevScrollX={prevScrollX} />
-            <Step9 prevScrollX={prevScrollX} />
+            <Step9 />
             <div
               className={`absolute z-10 h-full w-screen`}
               style={{ right: '0' }}

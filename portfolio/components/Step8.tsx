@@ -9,7 +9,7 @@ import MeteoritoPic5 from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import Diamond from '../public/Pictures/Diamonds/Diamond2.png'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step8({ prevScrollX }) {
+function Step8({ prevScrollX }: any) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',

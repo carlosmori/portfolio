@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { createNoise3D } from 'simplex-noise'
 import { MouseTrailMagic } from './class1.js'
-function Magic({ isVisible }) {
-  const canvasRef = useRef()
+function Magic({ isVisible }: any) {
+  const canvasRef: any = useRef()
   const ctx = useRef()
   const noise = createNoise3D()
   const mounted = useRef(false)
@@ -15,14 +15,11 @@ function Magic({ isVisible }) {
   }, [])
   useEffect(() => {
     if (!ctx.current && isVisible) {
-      ctx.current = canvasRef.current?.getContext('2d')
+      ctx.current = canvasRef.current.getContext('2d')
     }
   }, [isVisible])
 
-  useEffect(() => {}, [canvasRef, ctx])
   useEffect(() => {
-    console.log(`ctx equals:`)
-    console.log(ctx)
     if (
       ctx.current !== undefined &&
       window.innerHeight &&
@@ -30,13 +27,7 @@ function Magic({ isVisible }) {
       isVisible
     ) {
       console.log(window.innerHeight)
-      MouseTrailMagic(
-        canvasRef.current,
-        ctx.current,
-        noise,
-        mounted.current,
-        window
-      )
+      MouseTrailMagic(canvasRef.current, ctx.current, noise, mounted.current)
     }
   }, [ctx, isVisible])
   return (

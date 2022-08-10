@@ -1,19 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 function Welcome() {
-  const [displayHi, setDisplayHi] = useState(true)
-  const [displayIntroduction, setDisplayIntroduction] = useState(true)
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplayHi(true)
-    }, 2000)
-  }, [])
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplayIntroduction(true)
-    }, 4000)
-  }, [])
-
   return (
     <div
       className="flex min-h-screen flex-col items-center justify-center bg-cover text-center"

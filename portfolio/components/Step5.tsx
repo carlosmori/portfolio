@@ -9,7 +9,7 @@ import MeteoritoPic5 from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import SpaceRocket from '../public/Pictures/Ufo/spaceRocket.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step5({ currentScrollY }) {
+function Step5({ currentScrollY }: any) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',

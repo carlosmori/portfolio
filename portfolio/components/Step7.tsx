@@ -4,7 +4,7 @@ import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import AstronautWatchingPic from '../public/Pictures/Astronauts/Astronaut-watching.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step7({ prevScrollY, parentOffSetTop }) {
+function Step7({ prevScrollY, parentOffSetTop }: any) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',

@@ -7,7 +7,7 @@ import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step6({ currentScrollY }) {
+function Step6({ currentScrollY }: any) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',

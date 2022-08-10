@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FancyButton({ callback, text }) {
+function FancyButton({ callback, text }: any) {
   return (
     <div className="p-4">
       <div className="btn btn-one" onClick={callback}>
