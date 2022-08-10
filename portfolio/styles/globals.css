@@ -18,9 +18,6 @@
     color: white;
     font-family: 'font-oswald'
   }
-  * {
-    /* outline: 1px solid #f00 !important; */`
-  }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
