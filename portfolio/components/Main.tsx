@@ -30,12 +30,21 @@ function Main() {
   const contactMeRef: any = useRef()
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
-    setPrevScrollY(currentScrollY)
-    setActivateHorizontalScroll(
-      currentScrollY ==
-        firstHorizontalContainerRef?.current?.offsetHeight *
-          amountOfVerticalElements
+    console.log(`currentScrollY equals:`)
+    console.log(currentScrollY)
+    console.log(`firstHorizontalContainerRef?.current?.offsetHeight *
+    amountOfVerticalElements equals:`)
+    console.log(
+      firstHorizontalContainerRef?.current?.offsetHeight *
+        amountOfVerticalElements
     )
+    setPrevScrollY(currentScrollY)
+    // setActivateHorizontalScroll(
+    //   currentScrollY ==
+    //     firstHorizontalContainerRef?.current?.offsetHeight *
+    //       amountOfVerticalElements
+    // )
+    setActivateHorizontalScroll(false)
   }
   const scrollTo = () => {
     contactMeRef.current.scrollIntoView({ behavior: 'smooth' })
