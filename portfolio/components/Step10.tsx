@@ -1,17 +1,13 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import MagicFrog from '../public/Pictures/Magic/wizard-frog.svg'
 import Meteorito from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import ContactForm from './ContactForm'
-import FancyButton from './FancyButton'
-
 import Magic from './Magic/Magic'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
-import ShootingStars from './ShootingStars/ShootingStars'
-import Test from './Test'
 
-function Step10({ callback, contactMeRef }) {
+function Step10({ contactMeRef }) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
@@ -28,7 +24,6 @@ function Step10({ callback, contactMeRef }) {
       >
         <div className="flex h-full w-full flex-col">
           <ParallaxStarts />
-          {/* <ParallaxStarts /> */}
           {isVisible && <Magic isVisible={isVisible} />}
           <div className="absolute top-0 flex h-[50%] w-[100%] items-center justify-center ">
             <div
@@ -39,9 +34,8 @@ function Step10({ callback, contactMeRef }) {
               }}
             >
               <div
-                className="absolute top-0 left-0 z-10 h-full w-full"
+                className="absolute top-0 left-0 z-10 h-full w-full bg-black"
                 style={{
-                  'background-color': 'black', // Old browsers
                   background:
                     'linear-gradient(to right, rgba(0,0,0,1) 0%,rgb(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)',
                 }}
@@ -54,13 +48,11 @@ function Step10({ callback, contactMeRef }) {
                   : 'hidden'
               }`}
             >
-              Even A Magic Frog
+              Even Magic
             </h1>
             <div
-              className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}
+              className={`absolute right-[20%] h-48 w-48 animate-super-floating md:top-[30%] md:left-[50%] md:h-72 md:w-72`}
               style={{
-                top: `30%`,
-                left: `50%`,
                 filter: 'brightness(75%)',
               }}
             >
@@ -76,20 +68,8 @@ function Step10({ callback, contactMeRef }) {
             ref={contactMeRef}
             className="absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center overflow-hidden"
           >
-            {/* <ShootingStars /> */}
-
-            {/* <h1
-              className={`${
-                isVisible
-                  ? 'pointer-events-none z-0 animate-fade-in cursor-default px-2 text-center text-2xl font-light md:px-0 md:text-5xl'
-                  : 'hidden'
-              }`}
-            >
-              Contact Me
-            </h1> */}
             <ContactForm />
           </div>
-          {/*  */}
           <div
             className={`absolute h-32 w-32  animate-translate-out-of-bound md:h-72 md:w-72`}
             style={{
@@ -106,9 +86,6 @@ function Step10({ callback, contactMeRef }) {
               layout="responsive"
             />
           </div>
-          {/* <div className="pointer-events-none absolute top-[50%] flex h-[50%] w-[100%] items-center justify-center">
-            <ContactForm />
-          </div> */}
         </div>
       </div>
     </div>

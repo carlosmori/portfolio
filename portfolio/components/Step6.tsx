@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import Saturn2 from '../public/Pictures/Planets/Saturn2.svg'
 import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
@@ -25,7 +25,7 @@ function Step6({ currentScrollY }) {
       <ParallaxStarts smallStars={25} mediumStars={10} bigStars={5} />
       <div className="relative w-full">
         <h1
-          className={`sticky top-1/2 z-10 px-2 text-center text-2xl md:px-0 md:text-5xl ${
+          className={`sticky top-1/2  z-30 px-2 text-center text-2xl md:px-0 md:text-5xl ${
             isVisible ? ' animate-fade-in' : 'animate-fade-out'
           }`}
           style={{
@@ -84,10 +84,9 @@ function Step6({ currentScrollY }) {
           />
         </div>
         <div
-          className={`absolute right-[5%] z-20 h-32 w-32 md:h-96 md:w-96`}
+          className={`absolute right-[5%] z-20 h-56 w-56 md:h-96 md:w-96`}
           style={{
             top: `calc(30% + ${offSetTop * 2}%)`,
-            // left: `calc(5% + ${offSetTop * 5}%)`,
             animationDuration: '20s',
             filter: 'brightness(85%)',
           }}

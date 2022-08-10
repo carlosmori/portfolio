@@ -3,9 +3,7 @@ import React from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import FemaleAstronaut from '../public/Pictures/Astronauts/Astronaut-Female-Looking.svg'
 import Saturn from '../public/Pictures/Planets/Saturn.svg'
-import MeteoritoPic7 from '../public/Pictures/Meteoritos/Meteorito-7.svg'
 import Alien from '../public/Pictures/Ufo/alien-arms.svg'
-import UfoPic1 from '../public/Pictures/Ufo/Ufo-1.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step4() {

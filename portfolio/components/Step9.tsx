@@ -80,10 +80,10 @@ function Step9({
           />
         </div> */}
         <div
-          className={`absolute h-32 w-32 animate-super-floating md:h-72 md:w-72`}
+          className={`absolute right-[10%] h-32 w-32 animate-super-floating md:top-[30%] md:right-[30%] md:h-72 md:w-72`}
           style={{
-            bottom: `10%`,
-            left: `70%`,
+            // bottom: `10%`,
+            // left: `70%`,
             filter: 'brightness(55%)',
           }}
         >

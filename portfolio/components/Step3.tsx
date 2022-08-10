@@ -2,10 +2,8 @@ import React from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import Image from 'next/image'
 import AstronautPic1 from '../public/Pictures/Astronauts/Astronaut-1.svg'
-import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
 import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
 import Meteorito5 from '../public/Pictures/Meteoritos/Meteorito-5.svg'
-import PlanetPic1 from '../public/Pictures/Planets/Planet-1.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step3() {
@@ -46,14 +44,6 @@ function Step3() {
             layout="responsive"
           />
         </div>
-        {/* <div className="absolute top-[55%] right-[20%] h-28 w-28 md:top-[65%] md:right-[30%] md:h-52	md:w-52">
-          <Image
-            src={MeteoritoPic1}
-            alt="Picture of the Meteorito 1"
-            className=""
-            layout="responsive"
-          />
-        </div> */}
         <div
           className="absolute top-[75%] right-[50%] h-16 w-16 animate-super-floating md:top-[90%] md:right-[50%] md:h-20	md:w-20"
           style={{

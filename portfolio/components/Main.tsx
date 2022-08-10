@@ -1,10 +1,7 @@
 import React, { useRef, useState } from 'react'
 import FancyButton from './FancyButton'
-import ParallaxStarts from './ParallaxStars/ParallaxStars'
-import ShootingStars from './ShootingStars/ShootingStars'
 import Step1 from './Step1'
 import Step10 from './Step10'
-import Step11 from './Step11'
 import Step2 from './Step2'
 import Step3 from './Step3'
 import Step4 from './Step4'
@@ -30,21 +27,6 @@ function Main() {
   const onScrollMain = (e: any) => {
     const currentScrollY = e.target.scrollTop
     setPrevScrollY(currentScrollY)
-    // console.log(`prevScrollY.current equals:`)
-    // console.log(prevScrollY.current)
-    // console.log(`currentScrollY,  equals:`)
-    // console.log(
-    //   currentScrollY,
-    //   firstHorizontalContainerRef?.current?.offsetHeight
-    // )
-    // !3 corresponds to the amount of vertical elements
-    // console.log(` currentScrollY equals:`)
-    // console.log(currentScrollY)
-    // console.log(` equals:`)
-    // console.log(
-    //   firstHorizontalContainerRef?.current?.offsetHeight *
-    //     amountOfVerticalElements
-    // )
     setActivateHorizontalScroll(
       currentScrollY ==
         firstHorizontalContainerRef?.current?.offsetHeight *
@@ -106,22 +88,12 @@ function Main() {
           >
             <Step7
               prevScrollY={prevScrollY}
-              prevScrollX={prevScrollX}
               parentOffSetTop={
                 firstHorizontalContainerRef?.current?.offsetHeight *
                 amountOfVerticalElements
               }
-              amountOfVerticalElements={amountOfVerticalElements}
             />
-            <Step8
-              prevScrollY={prevScrollY}
-              prevScrollX={prevScrollX}
-              parentOffSetTop={
-                firstHorizontalContainerRef?.current?.offsetHeight *
-                amountOfVerticalElements
-              }
-              amountOfVerticalElements={amountOfVerticalElements}
-            />
+            <Step8 prevScrollX={prevScrollX} />
             <Step9
               prevScrollY={prevScrollY}
               prevScrollX={prevScrollX}
@@ -142,16 +114,7 @@ function Main() {
                     : 'overflow-y-hidden'
                 }`}
               >
-                <Step10
-                  prevScrollY={prevScrollY}
-                  prevScrollX={prevScrollX}
-                  parentOffSetTop={
-                    firstHorizontalContainerRef?.current?.offsetHeight *
-                    amountOfVerticalElements
-                  }
-                  amountOfVerticalElements={amountOfVerticalElements}
-                  contactMeRef={contactMeRef}
-                />
+                <Step10 contactMeRef={contactMeRef} />
               </div>
             </div>
           </div>

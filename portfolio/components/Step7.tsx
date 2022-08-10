@@ -2,19 +2,9 @@ import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import AstronautWatchingPic from '../public/Pictures/Astronauts/Astronaut-watching.svg'
-import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
-import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
-import MeteoritoPic1 from '../public/Pictures/Meteoritos/Meteorito-1.svg'
-import MeteoritoPic2 from '../public/Pictures/Meteoritos/Meteorito-2.png'
-import MeteoritoPic6 from '../public/Pictures/Meteoritos/Meteorito-6.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
-function Step7({
-  prevScrollY,
-  prevScrollX,
-  parentOffSetTop,
-  amountOfVerticalElements,
-}) {
+function Step7({ prevScrollY, parentOffSetTop }) {
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
     rootMargin: '0px',
@@ -24,33 +14,13 @@ function Step7({
     percentageOfTheComponentScrolledY,
     setPercentageOfTheComponentScrolledY,
   ] = useState(0)
-  const [
-    percentageOfTheComponentScrolledX,
-    setPercentageOfTheComponentScrolledX,
-  ] = useState(0)
+
   const astronautRef: any = useRef()
   useEffect(() => {
     setPercentageOfTheComponentScrolledY(
       ((prevScrollY * 100) / parentOffSetTop - 90) * 10
     )
   }, [prevScrollY, parentOffSetTop])
-  useEffect(() => {
-    setPercentageOfTheComponentScrolledX(
-      (prevScrollX * 100) / containerRef.current.offsetWidth
-    )
-  }, [prevScrollX, containerRef])
-  useEffect(() => {
-    console.log(`percentageOfTheComponentScrolledY equals:`)
-    console.log(percentageOfTheComponentScrolledY)
-  }, [percentageOfTheComponentScrolledY])
-  // useEffect(() => {
-  //   console.log(`prevScrollX equals:`)
-  //   console.log(prevScrollX)
-  //   console.log(`containerRef.current.offsetWidth equals:`)
-  //   console.log(containerRef.current.offsetWidth)
-  //   console.log(`(prevScrollX * 100 / ) equals:`)
-  //   console.log((prevScrollX * 100) / containerRef.current.offsetWidth)
-  // }, [prevScrollX])
   return (
     <div
       className="relative flex h-screen w-screen overflow-x-hidden overflow-y-hidden  text-6xl"
@@ -67,13 +37,6 @@ function Step7({
           style={{
             animationDuration: '0.5s',
           }}
-          // style={{
-          //   animationDuration: '1.5s',
-          //   backgroundImage: 'url(/gifs/blue.gif)',
-          //   WebkitBackgroundClip: 'text',
-          //   color: 'transparent',
-          //   backgroundPosition: 'right',
-          // }}
         >
           I Dont Think So...
         </h1>

@@ -32,8 +32,6 @@ function Step2() {
           className={`absolute mt-10 h-52 w-52 md:h-96 md:w-96`}
           style={{
             filter: 'brightness(30%)',
-            // transform: `scale(${percentageOfTheComponentScrolledY / 60})`,
-            // top: `calc(40% + ${percentageOfTheComponentScrolledY / 10}%)`,
             right: `calc(50% - ${astronautRef?.current?.offsetWidth / 2}px)`,
           }}
         >

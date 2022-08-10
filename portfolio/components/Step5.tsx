@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useElementOnScreen } from '../hooks/useElementOnScreen'
 import AstronautPic3 from '../public/Pictures/Astronauts/Astronaut-3.svg'
 import PlanetPic4 from '../public/Pictures/Planets/Planet-4.svg'
@@ -7,7 +7,6 @@ import PlanetPic5 from '../public/Pictures/Planets/Planet-5.svg'
 import MeteoritoPic4 from '../public/Pictures/Meteoritos/Meteorito-4.svg'
 import MeteoritoPic5 from '../public/Pictures/Meteoritos/Meteorito-5.svg'
 import SpaceRocket from '../public/Pictures/Ufo/spaceRocket.svg'
-import MeditatingUfo from '../public/Pictures/Ufo/Meditating-ufo.svg'
 import ParallaxStarts from './ParallaxStars/ParallaxStars'
 
 function Step5({ currentScrollY }) {
@@ -154,20 +153,18 @@ function Step5({ currentScrollY }) {
           />
         </div>
         <div
-          className="absolute z-10 animate-rotate"
+          className="absolute z-10 h-12 w-12 animate-rotate md:h-32 md:w-32"
           style={{
             top: `calc(40% + ${offSetTop * 1}%)`,
             right: `calc(50% - ${offSetTop * 0.9}%)`,
             animationDuration: '10s',
-            filter: 'brightness(75%)',
+            filter: 'brightness(55%)',
           }}
         >
           <Image
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
-            className=""
-            width={100}
-            height={100}
+            layout="responsive"
           />
         </div>
         <div
