@@ -51,6 +51,7 @@ function Step7({ prevScrollY, parentOffSetTop }: any) {
           }}
         >
           <Image
+            priority
             src={AstronautWatchingPic}
             alt="Picture of the Astronaut 3"
             className=""

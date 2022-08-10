@@ -61,6 +61,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={Diamond}
             alt="Picture of the Astronaut 3"
             className=""
@@ -78,6 +79,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={HandReachingAstronaut}
             alt="Picture of the Astronaut 3"
             className=""
@@ -94,6 +96,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic2}
             alt="Picture of the Astronaut 3"
             className=""
@@ -110,6 +113,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={PlanetPic4}
             alt="Picture of the Astronaut 3"
             className=""
@@ -126,6 +130,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={Ufo1}
             alt="Picture of the Astronaut 3"
             className=""
@@ -142,6 +147,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Astronaut 3"
             className=""
@@ -158,6 +164,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Astronaut 3"
             className=""
@@ -174,6 +181,7 @@ function Step8({ prevScrollX }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Astronaut 3"
             className=""

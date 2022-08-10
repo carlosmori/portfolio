@@ -36,6 +36,7 @@ function Step2() {
           }}
         >
           <Image
+            priority
             src={AstronautFemale}
             alt="Picture of the Astronaut Female"
             className=""

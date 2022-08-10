@@ -11,7 +11,7 @@ function ContactForm() {
       <div
         className="h-36 w-36 animate-super-floating rounded-full md:h-48 md:w-48"
         style={{
-          backgroundImage: 'url(/ProfilePhotos/perfil3.jpg)',
+          backgroundImage: 'url(/ProfilePhotos/perfil3.JPG)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           pointerEvents: 'none',

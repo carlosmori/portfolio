@@ -69,6 +69,7 @@ function Step9() {
           }}
         >
           <Image
+            priority
             src={MagicCat}
             alt="Picture of the Astronaut 3"
             className=""

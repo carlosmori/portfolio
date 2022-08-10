@@ -27,6 +27,7 @@ function Step4() {
           }}
         >
           <Image
+            priority
             src={FemaleAstronaut}
             alt="Picture of the Female Astronaut"
             className=""
@@ -40,6 +41,7 @@ function Step4() {
           }}
         >
           <Image
+            priority
             src={Alien}
             alt="Picture of the Alien 1"
             className=""
@@ -56,6 +58,7 @@ function Step4() {
           }}
         >
           <Image
+            priority
             src={Saturn}
             alt="Picture of Saturn 1"
             className=""

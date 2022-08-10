@@ -45,6 +45,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={SpaceRocket}
             alt="Picture of the Planet 5"
             className=""
@@ -64,6 +65,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={PlanetPic4}
             alt="Picture of the Planet 4"
             className=""
@@ -78,6 +80,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={AstronautPic3}
             alt="Picture of the Astronaut 3"
             className=""
@@ -95,6 +98,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
             className=""
@@ -111,6 +115,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
             className=""
@@ -128,6 +133,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
             className=""
@@ -145,6 +151,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
             className=""
@@ -162,6 +169,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic5}
             alt="Picture of the Meteorito 5"
             layout="responsive"
@@ -178,6 +186,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic4}
             alt="Picture of the Meteorito 4"
             layout="responsive"
@@ -191,6 +200,7 @@ function Step5({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={PlanetPic5}
             alt="Picture of the Planet 5"
             className=""

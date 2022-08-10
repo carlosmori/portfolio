@@ -45,6 +45,7 @@ function Step6({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic1}
             alt="Picture of the Astronaut 3"
             className=""
@@ -61,6 +62,7 @@ function Step6({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic2}
             alt="Picture of the Astronaut 3"
             className=""
@@ -77,6 +79,7 @@ function Step6({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic6}
             alt="Picture of the Astronaut 3"
             className=""
@@ -92,6 +95,7 @@ function Step6({ currentScrollY }: any) {
           }}
         >
           <Image
+            priority
             src={Saturn2}
             alt="Picture of the Astronaut 3"
             className=""

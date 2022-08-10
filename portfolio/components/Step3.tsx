@@ -38,6 +38,7 @@ function Step3() {
           }}
         >
           <Image
+            priority
             src={AstronautPic1}
             alt="Picture of the Astronaut 1"
             className=""
@@ -51,6 +52,7 @@ function Step3() {
           }}
         >
           <Image
+            priority
             src={MeteoritoPic2}
             alt="Picture of the Meteorito 2"
             layout="responsive"
@@ -63,6 +65,7 @@ function Step3() {
           }}
         >
           <Image
+            priority
             src={Meteorito5}
             alt="Picture of the Planet 1"
             layout="responsive"

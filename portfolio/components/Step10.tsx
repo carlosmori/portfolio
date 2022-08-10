@@ -57,6 +57,7 @@ function Step10({ contactMeRef }: any) {
               }}
             >
               <Image
+                priority
                 src={MagicFrog}
                 alt="Picture of the Astronaut 3"
                 className=""
